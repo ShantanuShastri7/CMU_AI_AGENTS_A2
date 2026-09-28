@@ -1,0 +1,8 @@
+uv run python -m workflow score \
+  --labels seed_labels.json \
+  --predictions output/baseline_predictions.json
+execution_failure    MCC=-0.0022 TP=4 TN=65 FP=33 FN=8  support(+/-)=12/98
+wrong_data           MCC=0.0000  TP=0 TN=73 FP=0 FN=25  support(+/-)=25/73
+wrong_chart          MCC=0.1096  TP=3 TN=27 FP=0 FN=68  support(+/-)=71/27
+hard_to_read         MCC=0.0000  TP=0 TN=59 FP=0 FN=39  support(+/-)=39/59
+macro_mcc            0.0268
