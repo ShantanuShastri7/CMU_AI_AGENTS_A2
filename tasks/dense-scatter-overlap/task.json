@@ -1,0 +1,6 @@
+{
+  "task_id": "dense-scatter-overlap",
+  "task_class": "dense-data-validation",
+  "instructions": "Using matplotlib, generate a scatter plot with two classes. Class A is 5000 points drawn from a normal distribution with mean (0,0) and standard deviation 1. Class B is 5000 points drawn from a normal distribution with mean (0.5, 0.5) and standard deviation 1. Plot Class A in blue with an alpha of 0.1, and Class B in red with an alpha of 0.1. Add a legend, title 'Dense Scatter', and save as figure.png.",
+  "inputs": []
+}

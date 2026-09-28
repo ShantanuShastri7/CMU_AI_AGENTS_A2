@@ -111,12 +111,12 @@ def _ask(run: Run, family: ErrorFamily, question: str) -> list[Error]:
 
     def make_prompt(shown_trajectory: str, shown_inputs: str) -> str:
         return f"""{question}
-Answer YES or NO, then explain briefly.
+        Answer YES or NO, then explain briefly.
 
-Task: {run.instructions}
-Trajectory: {shown_trajectory}
-Input files: {shown_inputs or '(none)'}
-"""
+        Task: {run.instructions}
+        Trajectory: {shown_trajectory}
+        Input files: {shown_inputs or '(none)'}
+        """
 
     def ask(prompt: str, image: bytes | None) -> dict:
         content = [{"type": "text", "text": prompt}]
@@ -201,7 +201,9 @@ def judge_execution(run: Run) -> list[Error]:
     # Valid figure was produced and decoded
     return []
 
-
+#GAPS: natural langugae prompt might not be able to verify data plots with accuracy
+#GAPS: Instead of having a broad check around WRONG_CHART, make the cod programatically check the different 
+#.     attributes request by the user.
 def judge_data_and_chart(run: Run) -> list[Error]:
     """Whether the figure plots the requested data, built the requested way."""
     wrong_data = _ask(
@@ -216,7 +218,7 @@ def judge_data_and_chart(run: Run) -> list[Error]:
     )
     return wrong_data + wrong_chart
 
-
+#GAPS: Have deterministic readability checks in place to verify in multiple agent turns
 def judge_readability(run: Run) -> list[Error]:
     """Whether the figure can be read."""
     return _ask(

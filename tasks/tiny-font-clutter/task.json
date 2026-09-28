@@ -1,0 +1,6 @@
+{
+  "task_id": "tiny-font-clutter",
+  "task_class": "specific-formatting-constraints",
+  "instructions": "Using matplotlib, create a pie chart with 20 equal slices. Label each slice with the numbers 1 through 20. You MUST set the font size of the slice labels to exactly 4 points so they are tiny. The background of the entire figure must be dark gray ('#333333'). Save the figure to figure.png.",
+  "inputs": []
+}
