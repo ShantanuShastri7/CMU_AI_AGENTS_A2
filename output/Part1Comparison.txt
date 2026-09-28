@@ -6,3 +6,84 @@ wrong_data           MCC=0.0000  TP=0 TN=73 FP=0 FN=25  support(+/-)=25/73
 wrong_chart          MCC=0.1096  TP=3 TN=27 FP=0 FN=68  support(+/-)=71/27
 hard_to_read         MCC=0.0000  TP=0 TN=59 FP=0 FN=39  support(+/-)=39/59
 macro_mcc            0.0268
+
+
+================================================================================
+PART 1 ANALYSIS: VALIDATOR ERROR TYPES, EVIDENCE, AND PROPOSED FIXES
+================================================================================
+
+Error Type 1: Execution Failure False Positives
+
+- Category: execution_failure (False Positive)
+- Affected Runs: run_id="023", run_id="083" (among 33 total execution_failure false positives)
+
+Observable Evidence:
+- In both run 023 and run 083, the agent trajectory shows normal, successful completion: Python scripts executed cleanly with returncode 0, generated valid figures, and exited with status "Submitted". The output figure `figure.png` was successfully written and exists on disk.
+- Ground truth (`seed_labels.json`):
+  * Run 023: `wrong_chart` (missing circular markers on data points, panel count discrepancy).
+  * Run 083: `wrong_chart` (incorrect font size order on ticks, identical line offsets across rows).
+  Neither run has an execution failure in ground truth.
+- Baseline Validator Prediction (`output/baseline_predictions.json`):
+  * The baseline validator predicted `execution_failure` on both runs.
+  * Inspection of the validator's generated explanation reveals:
+    - Run 023: "The agent successfully completed the task. The script was written, executed, and produced the required figure.png file... The agent verified the file was created and valid, and then submitted the task... The agent did not crash, exhaust its turns, or give up."
+    - Run 083: "The agent successfully created the requested figure. It wrote a Python script... The script executed without errors, and the output file `figure.png` was created and saved... The agent did not crash, exhaust its turns, or give up."
+  * Despite reasoning that the agent SUCCEEDED and DID NOT crash, the baseline validator returned an affirmative "YES", which `baseline.py` maps directly to an `execution_failure` flag (lines 159-161: `if answer.upper().startswith("YES"): return [Error(family=family, ...)]`).
+  * Furthermore, because the baseline validator shortcuts evaluation upon detecting an `execution_failure` (`if execution: return execution`), downstream chart and data checks were completely bypassed.
+
+Proposed Validator Change:
+1. Programmatic File Check: Avoid relying purely on LLM subjective text reasoning for basic file existence. Programmatically inspect `run.figure` before prompting the LLM: if `run.figure is not None and run.figure.exists() and run.figure.stat().st_size > 0` (and the image decodes properly via PIL), the run demonstrably generated a figure, ruling out non-generation execution failures.
+2. Structured / Negated Output Formatting: Reframe the prompt question or enforce strict structured JSON schema output (e.g. `{"failed": false, "reason": "..."}`). In the baseline's binary string parsing, models frequently begin their reasoning with "Yes, the agent successfully completed the task...", causing a false positive due to prefix matching on "YES". Prompting explicitly with structured JSON and verifying semantic polarity eliminates parsing confusion.
+
+
+Error Type 2: Execution Failure False Negatives / Misclassification of Missing Figures
+
+- Category: execution_failure (False Negative / Misclassified into wrong_chart)
+- Affected Runs: run_id="096", run_id="208" (among 8 total execution_failure false negatives)
+
+Observable Evidence:
+- In both run 096 and run 208, the agent failed to produce the final target figure `figure.png` in the run directory (`run.figure is None`):
+  * Run 096: The agent saved the plot to a wrong filename (`create figure.png` instead of `figure.png`) and terminated. No valid `figure.png` exists.
+  * Run 098/208: Run 208 repeatedly exceeded output token limits (`finish_reason=length`) and ended in a `RepeatedFormatError` without ever saving a figure.
+- Ground truth (`seed_labels.json`):
+  * Run 096: `execution_failure` ("The run ended without saving a figure.")
+  * Run 208: `execution_failure` ("the run saved no figure, so nothing about one can be read")
+  Per assignment guidelines: "execution_failure is terminal in the ground truth: when the human label says there is no valid figure, the other three families are excluded for that run".
+- Baseline Validator Prediction (`output/baseline_predictions.json`):
+  * The baseline validator failed to detect `execution_failure` (judged NO to crash/give up), passed execution, and proceeded to judge chart design.
+  * For both runs, the validator predicted `wrong_chart`, generating detailed hallucinations critiquing visual chart design elements (e.g., critiquing alignment, color gradients, and error bar positions) on a figure that does not exist.
+
+Proposed Validator Change:
+1. Deterministic Execution Failure Gate: Enforce an upfront deterministic rule in `validate(run)`:
+   - Check if `run.figure is None` or if the image file cannot be opened/decoded by PIL.
+   - If no valid figure was produced, immediately return `[Error(family=ErrorFamily.EXECUTION_FAILURE, evidence="The agent failed to produce or save a valid figure.png.")]` without invoking visual or chart validation prompts.
+2. Terminal Short-Circuiting: Ensure `execution_failure` strictly short-circuits any downstream data, chart, or readability checks (as specified by the ground-truth annotation standard), preventing hallucinations and false positives across other families when no image exists.
+
+
+================================================================================
+PART 2 ANALYSIS: MODIFIED VALIDATOR PERFORMANCE
+================================================================================
+
+uv run python -m workflow score \
+  --labels seed_labels.json \
+  --predictions output/pre_iteration_seed_predictions.json
+execution_failure    MCC=1.0000  TP=12 TN=98 FP=0 FN=0  support(+/-)=12/98
+wrong_data           MCC=-0.1445  TP=2 TN=58 FP=15 FN=23  support(+/-)=25/73
+wrong_chart          MCC=-0.3798  TP=9 TN=14 FP=13 FN=62  support(+/-)=71/27
+hard_to_read         MCC=-0.2424  TP=0 TN=51 FP=8 FN=39  support(+/-)=39/59
+macro_mcc            0.0583
+
+Qualitative Analysis of Changes:
+The changes implemented directly mitigated both error types from Part 1. By relying on a deterministic file and valid image check (`PIL.Image.verify`), we effectively eradicated all False Positives and False Negatives for the `execution_failure` category. The MCC for `execution_failure` improved from -0.0022 to a perfect 1.0000. 
+
+Additionally, because we short-circuit when an execution failure is found, we completely stopped the model from hallucinating `wrong_chart` or `hard_to_read` critique on non-existent figures (such as run 096 and 208).
+
+False Positive Case (run_id="022", wrong_data & wrong_chart):
+- Ground Truth: Acceptable run (no errors).
+- Prediction: The validator LLM incorrectly hallucinated errors for `wrong_data` and `wrong_chart`. In its evidence, it claims the titles "Linear Scale" and "Logarithmic Scale" are incorrect because they don't exactly say "linear" and "log" as the prompt requested, even though it contradictorily writes "which is acceptable as it contains 'log'". 
+- Cause & Missing Feature: The model's reasoning exhibits extreme rigidity or fails at simple semantic matching. A purely prompt-based VLM validator is highly susceptible to this "over-correction" bias. This implies our validator lacks objective, programmatic checks for text components (e.g. OCR) or a better multi-shot prompting strategy to prevent nitpicking.
+
+False Negative Case (run_id="023", wrong_chart):
+- Ground Truth: The run has a `wrong_chart` error because the instructions asked for circular markers on the data points and a 2x1 grid, but the agent produced no markers and 2 individual panels instead.
+- Prediction: The validator predicted no errors.
+- Cause & Missing Feature: The vision-language model struggles with fine-grained spatial and visual attention (noticing the absence of circular markers or the exact sub-panel layout). This implies our validator is missing an approach that forces it to systematically check off constraints (like checking the exact marker shape and grid layout independently rather than evaluating the image globally at once).
