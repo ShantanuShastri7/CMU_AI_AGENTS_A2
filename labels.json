@@ -1,0 +1,84 @@
+{
+  "labels": [
+    {
+      "run_id": "dense-scatter-overlap__glm",
+      "errors": []
+    },
+    {
+      "run_id": "dense-scatter-overlap__ministral",
+      "errors": []
+    },
+    {
+      "run_id": "dense-scatter-overlap__qwen",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The program did not raise an exception and no figure.png was produced."
+        }
+      ]
+    },
+    {
+      "run_id": "exact-marker-grid__glm",
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "Matplotlib by default includes a line between points, which was not asked but the model forgot to disable it in the config. The plotted figures are very close to each other as well"
+        }
+      ]
+    },
+    {
+      "run_id": "exact-marker-grid__ministral",
+      "errors": []
+    },
+    {
+      "run_id": "exact-marker-grid__qwen",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The program ecxited due to LimitsExceeded"
+        }
+      ]
+    },
+    {
+      "run_id": "high-frequency-sine__glm",
+      "errors": []
+    },
+    {
+      "run_id": "high-frequency-sine__ministral",
+      "errors": []
+    },
+    {
+      "run_id": "high-frequency-sine__qwen",
+      "errors": []
+    },
+    {
+      "run_id": "strict-formatting-colors__glm",
+      "errors": []
+    },
+    {
+      "run_id": "strict-formatting-colors__ministral",
+      "errors": []
+    },
+    {
+      "run_id": "strict-formatting-colors__qwen",
+      "errors": []
+    },
+    {
+      "run_id": "tiny-font-clutter__glm",
+      "errors": null
+    },
+    {
+      "run_id": "tiny-font-clutter__ministral",
+      "errors": null
+    },
+    {
+      "run_id": "tiny-font-clutter__qwen",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The program ecxited due to LimitsExceeded"
+        }
+      ]
+    }
+  ]
+}
