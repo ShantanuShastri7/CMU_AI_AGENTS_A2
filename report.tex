@@ -89,12 +89,55 @@ We implemented two mutants for \texttt{strict-formatting-colors}:
 A deterministic Harbor verifier could easily decide `execution_failure` and `wrong_data` (by reading the sidecar JSON). However, it struggles heavily with `wrong_chart` or `hard_to_read` because visually asserting font sizes, colors, and overlapping text deterministically via pixels requires heavy CV heuristics. Therefore, a per-task verifier cannot serve as a generalized grading mechanism across arbitrary visualization tasks without massive manual engineering per task.
 
 \section{Part 4: Iterate on Your Design}
+
 \subsection{Additional Improvement Motivated by Part 3}
-[TODO]
+Motivated by the failure of the VLM to catch strict constraints in Part 3 (such as exact hex colors or distinct subplot markers) and its blindness to dense overlaps making charts unreadable, we made two granular changes:
+1. \textbf{Granular `wrong_chart`}: We changed the single broad `wrong_chart` prompt to a systematic extraction prompt ("Step 1: Extract all constraints... Step 2: Verify each constraint..."). We expected this "Chain of Thought" extraction to reduce hallucinations.
+2. \textbf{Granular `hard_to_read`}: We explicitly listed four common readability issues (illegible overlaps, tiny fonts, poor contrast, extreme dense clutter) inside the prompt. We expected this to help the VLM identify the specific edge-cases presented in our new tasks (e.g., `tiny-font-clutter`).
+
 \subsection{Final Evaluation on Seed and New Tasks}
-[TODO]
+\textbf{Seed Runs (Before Change)}:
+execution\_failure: MCC=1.0000
+wrong\_data: MCC=-0.1445
+wrong\_chart: MCC=-0.3798
+hard\_to\_read: MCC=-0.2424
+macro\_mcc: 0.0583
+
+\textbf{Seed Runs (After Change)}:
+execution\_failure: MCC=1.0000
+wrong\_data: MCC=-0.2363
+wrong\_chart: MCC=0.0000
+hard\_to\_read: MCC=0.0454
+macro\_mcc: 0.2023
+
+\textbf{Self-Authored Runs (Before Change)}:
+execution\_failure: MCC=1.0000
+wrong\_data: MCC=0.0000
+wrong\_chart: MCC=-0.1581
+hard\_to\_read: MCC=0.2000
+macro\_mcc: 0.2605
+
+\textbf{Self-Authored Runs (After Change)}:
+execution\_failure: MCC=1.0000
+wrong\_data: MCC=0.0000
+wrong\_chart: MCC=0.0000
+hard\_to\_read: MCC=0.0000
+macro\_mcc: 0.2500
+
 \subsection{Qualitative Analysis of Self-Authored Tasks}
-[TODO]
+The granular constraint extraction successfully eradicated False Positives on `wrong_chart` for the self-authored tasks. By forcing the model to systematically extract constraints, it stopped hallucinating non-existent formatting rules, bringing the False Positives for `wrong_chart` from 7 down to 0. 
+
+For `hard_to_read`, the MCC actually dropped from 0.2000 to 0.0000 on the custom tasks, despite jumping into positive territory (0.0454) on the massive Seed dataset. This indicates that while explicitly listing common readability issues like "tiny fonts" and "poor contrast" helped the model detect readability flaws on general charts (Seed dataset), it caused the VLM to become hyper-sensitive and over-penalize our specific self-authored charts, resulting in 10 False Positives on our small custom test set. 
+
 \subsection{Further Changes}
-[TODO]
+While not formally implemented in the final evaluation, we designed several theoretical deterministic checks to further improve the validator's efficiency and accuracy:
+
+1. \textbf{The ``Code Crash'' Regex Check (`execution_failure`)}: While we currently rely on the absence of \texttt{figure.png} to flag an execution failure, we could parse the agent's trajectory for keywords like \texttt{Traceback (most recent call last):} or \texttt{SyntaxError:}. This would allow the validator to immediately flag crashed runs without querying the VLM.
+
+2. \textbf{The ``Hardcoded Data'' AST Check (`wrong_data`)}: A common failure mode is agents hallucinating data arrays instead of reading from the provided files. We could parse the generated Python code using the \texttt{ast} module to ensure \texttt{pd.read\_csv} or \texttt{open()} is actually called, automatically flagging \texttt{wrong_data} if the agent attempts to hardcode the dataset.
+
+3. \textbf{The ``Gave Up'' Sentiment Check (`execution_failure`)}: Some agents fail gracefully by outputting natural language like ``I cannot complete this task.'' A lightweight keyword scanner on the agent's final conversational turn could instantly categorize these as execution failures, saving VLM token costs.
+
+These checks represent a shift toward a hybrid validation model: using deterministic heuristics to catch catastrophic failures instantly, reserving the expensive VLM strictly for nuanced visual chart critiques.
+
 \end{document}

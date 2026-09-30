@@ -103,3 +103,28 @@ wrong_data           MCC=0.0000  TP=0 TN=6 FP=6 FN=0  support(+/-)=0/12
 wrong_chart          MCC=-0.1581  TP=1 TN=3 FP=7 FN=1  support(+/-)=2/10
 hard_to_read         MCC=0.2000  TP=2 TN=2 FP=8 FN=0  support(+/-)=2/10
 macro_mcc            0.2605
+
+================================================================================
+PART 4 ANALYSIS: ITERATE ON YOUR DESIGN
+================================================================================
+
+
+uv run python -m workflow score \  
+  --labels seed_labels.json \
+  --predictions output/final_seed_predictions.json
+execution_failure    MCC=1.0000  TP=12 TN=98 FP=0 FN=0  support(+/-)=12/98
+wrong_data           MCC=-0.2363  TP=3 TN=46 FP=27 FN=22  support(+/-)=25/73
+wrong_chart          MCC=0.0000  TP=0 TN=27 FP=0 FN=71  support(+/-)=71/27
+hard_to_read         MCC=0.0454  TP=30 TN=16 FP=43 FN=9  support(+/-)=39/59
+macro_mcc            0.2023
+
+
+
+uv run python -m workflow score \  
+  --predictions output/authored_predictions.json
+execution_failure    MCC=1.0000  TP=3 TN=12 FP=0 FN=0  support(+/-)=3/12
+wrong_data           MCC=0.0000  TP=0 TN=6 FP=6 FN=0  support(+/-)=0/12
+                     WARNING: insufficient ground-truth support; MCC reported as 0 by convention
+wrong_chart          MCC=0.0000  TP=0 TN=10 FP=0 FN=2  support(+/-)=2/10
+hard_to_read         MCC=0.0000  TP=2 TN=0 FP=10 FN=0  support(+/-)=2/10
+macro_mcc            0.2500
