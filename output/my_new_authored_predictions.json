@@ -1,0 +1,163 @@
+{
+  "predictions": [
+    {
+      "run_id": "dense-scatter-overlap__glm",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to extreme clutter and dense overlapping data points that obscure the meaning of the chart. With 10,000 points (5,000 from each class) plotted with low alpha values (0.1), the points create a dense, overlapping cloud that makes it hard to discern individual data points or see the underlying distribution patterns clearly. While the legend and title are visible, the high density of points creates visual clutter that makes the chart difficult to interpret."
+        }
+      ]
+    },
+    {
+      "run_id": "dense-scatter-overlap__ministral",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from the request in the color of the classes. The request specifies Class A should be blue and Class B should be red, but the plot shows Class A as light blue and Class B as light red. Additionally, the legend labels are incorrect, showing \"Class A\" and \"Class B\" instead of the expected colors."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to extreme clutter and dense overlapping data points that obscure the meaning of the chart. With 5000 points for each class plotted with alpha=0.1, the overlapping points create a \"blob\" effect, making it hard to discern individual data points or patterns. While the legend and title are legible, the high density of points in the center creates visual noise that makes the plot difficult to interpret."
+        }
+      ]
+    },
+    {
+      "run_id": "dense-scatter-overlap__qwen",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "exact-marker-grid__glm",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The markers are extremely large (size 100) relative to the plot area, causing them to dominate the subplots and obscure the data points. The markers overlap with the axes and labels, making the chart difficult to interpret. The text labels are also partially obscured by the large markers. The extreme size of the markers creates visual clutter and makes it hard to see the actual data points and their relationships."
+        }
+      ]
+    },
+    {
+      "run_id": "exact-marker-grid__ministral",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n\nThe task required plotting the points (1,1), (2,4), (3,9) in each subplot using different markers. However, the generated figure shows filled shapes (star, pentagon, hexagon, diamond) instead of individual data points. The markers are not just the specified symbols but are filled and appear as solid shapes, which is not consistent with plotting discrete points. Additionally, the plot does not show the actual points (1,1), (2,4), (3,9) as expected; instead, it displays the marker shapes at various positions, which suggests that the plotting logic may have been misinterpreted. The markers are also not size 100 as requested, and the data points are not clearly visible."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n1. The markers are extremely large (size 100), causing them to dominate the subplots and obscure the data points.\n2. The markers overlap with the plot boundaries and axes, making it hard to see the full context of the data.\n3. The labels and titles are partially cut off or obscured by the oversized markers.\n4. The overall layout is cluttered and visually overwhelming, making it difficult to interpret the data points (1,1), (2,4), (3,9) clearly."
+        }
+      ]
+    },
+    {
+      "run_id": "exact-marker-grid__qwen",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "high-frequency-sine__glm",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in one key way: the y-axis limits are not strictly from -2.0 to 2.0 as implied by the function y = sin(100 * x) + cos(150 * x), which theoretically ranges between -2 and 2. However, the plot shows a compressed y-axis range (approximately -2.0 to 2.0) that appears to be automatically adjusted by matplotlib to fit the data, rather than being explicitly set. The x-axis is correctly set from 0 to 10, the line is black with width 0.5, and the title is correct. The main difference is that the y-axis limits are not explicitly set, so they are determined by the data range, which may not be exactly -2 to 2 due to the nature of the high-frequency oscillations."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to extreme clutter and dense overlapping data points that obscure the meaning of the chart. The high-frequency waves create a nearly solid vertical line pattern that makes it impossible to distinguish individual data points or see the overall pattern clearly. The x-axis is also not clearly visible due to the overwhelming density of the lines. While the text is legible and the contrast is good, the extreme density of the data points makes the chart essentially unreadable."
+        }
+      ]
+    },
+    {
+      "run_id": "high-frequency-sine__ministral",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way: The y-axis limits are not set to a fixed range, which causes the plot to display the full range of the function's values (approximately -2.0 to 2.0). The task did not specify y-axis limits, but the plot shows the full range, which may not be the intended appearance. However, the x-axis limits are correctly set from 0 to 10, the line is black and solid with a width of 0.5, the function is correctly plotted, and the title is \"High Frequency Waves\". The file is saved as \"figure.png\". The main difference is the y-axis scaling, which is not explicitly requested but may affect the visual representation."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to extreme clutter and dense overlapping data points that obscure the meaning of the chart. The high-frequency oscillations create a nearly solid black band in the plot, making it impossible to distinguish individual data points or patterns. The vertical lines are so closely packed that they form a continuous shaded area, which obscures the underlying function and makes the chart essentially illegible."
+        }
+      ]
+    },
+    {
+      "run_id": "high-frequency-sine__qwen",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n\nThe y-axis limits are not explicitly set, which causes the plot to automatically scale to show the full range of the function values (approximately -2.0 to 2.0). However, the task did not specify any requirements for the y-axis limits, so this is not a deviation from the instructions.\n\nThe plot correctly:\n- Uses the function y = sin(100 * x) + cos(150 * x)\n- Has 10000 evenly spaced x values between 0 and 10\n- Uses a black solid line with a line width of 0.5\n- Sets the x-axis limits strictly from 0 to 10\n- Titles the plot 'High Frequency Waves'\n- Saves the chart as figure.png\n\nThe only potential difference is that the y-axis limits are not manually set, but since the task did not require specific y-axis limits, this is acceptable. The plot appears to be correct based on the given requirements."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to extreme clutter and dense overlapping data points that obscure the meaning of the chart. The high-frequency oscillations create a nearly solid black band across the plot, making it impossible to distinguish individual data points or trends. The line width of 0.5 is too thin for such a high density of data points, resulting in visual noise that overwhelms the plot. While the title and axis limits are correctly set, the visual representation is essentially illegible due to the extreme data density."
+        }
+      ]
+    },
+    {
+      "run_id": "strict-formatting-colors__glm",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n1. The colors of the bars are incorrect. The first bar (A) is red (#FF5733) which is correct, but the second bar (B) is green (#33FF57) which is correct, and the third bar (C) is blue (#3357FF) which is also correct. Wait, this seems correct.\n\nActually, let me recheck the colors:\n- Bar A: #FF5733 (correct)\n- Bar B: #33FF57 (correct) \n- Bar C: #3357FF (correct)\n\nThe colors are correct. The title is \"RGB Bars\" (correct). The bars have black edges with line width 2.5 (correct). The values are [10, 20, 15] for categories ['A', 'B', 'C'] (correct).\n\nThe only potential issue is that the y-axis range is 0-20, which is fine since the highest value is 20. The chart appears to be correctly generated.\n\nWait, I need to recheck the colors again. The colors are"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The text labels for the categories (A, B, C) at the bottom are partially cut off and overlapping with the bars, making them difficult to read. The font size appears to be too small for comfortable reading, especially for the x-axis labels. The black edges around the bars are thick, which contributes to the clutter and makes the chart appear visually busy. The combination of these factors makes the chart challenging to interpret clearly."
+        }
+      ]
+    },
+    {
+      "run_id": "strict-formatting-colors__ministral",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The text labels for the categories ('A', 'B', 'C') are very small and difficult to read, especially at the bottom of the chart. The font size is too small to be comfortable for reading, which is a common issue in charts when the text is not properly scaled. While the colors are distinct and the bars are not overlapping, the small font size makes the labels hard to discern."
+        }
+      ]
+    },
+    {
+      "run_id": "strict-formatting-colors__qwen",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The text labels for the categories ('A', 'B', 'C') are very small and difficult to read, especially at the bottom of the chart. The font size is too small to be comfortable for reading, which is a common issue in bar charts when the axis labels are not properly sized. Additionally, the bars are quite close together, which could make it slightly harder to distinguish them, though this is less of an issue than the font size. The primary concern is the small font size of the labels."
+        }
+      ]
+    },
+    {
+      "run_id": "tiny-font-clutter__glm",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n1. The text labels (numbers 1-20) are extremely small (4-point font) and overlap with each other, making them illegible.\n2. The font size is far too small to read comfortably, especially given the circular arrangement of the labels.\n3. While the color contrast between the text and the dark background is adequate, the tiny font size makes the text unreadable regardless.\n4. The chart is extremely cluttered with 20 overlapping labels in a small space, obscuring the meaning of the chart.\n\nThe combination of tiny font size and dense overlapping labels makes the chart essentially impossible to read."
+        }
+      ]
+    },
+    {
+      "run_id": "tiny-font-clutter__ministral",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to multiple issues:\n1. The text labels (numbers 1-20) are extremely small (4-point font) and overlap with each other, making them illegible.\n2. The font size is far too small to read comfortably, especially given the crowded nature of the pie chart.\n3. While the dark gray background provides decent contrast with the colored slices, the tiny labels themselves are barely visible and difficult to distinguish.\n4. The chart is extremely cluttered with 20 densely packed slices and overlapping labels, obscuring the meaning of the chart.\n\nThese issues combine to make the chart nearly impossible to interpret."
+        }
+      ]
+    },
+    {
+      "run_id": "tiny-font-clutter__qwen",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    }
+  ]
+}

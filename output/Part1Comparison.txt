@@ -128,3 +128,17 @@ wrong_data           MCC=0.0000  TP=0 TN=6 FP=6 FN=0  support(+/-)=0/12
 wrong_chart          MCC=0.0000  TP=0 TN=10 FP=0 FN=2  support(+/-)=2/10
 hard_to_read         MCC=0.0000  TP=2 TN=0 FP=10 FN=0  support(+/-)=2/10
 macro_mcc            0.2500
+
+
+
+
+More changes
+uv run python -m workflow score \
+  --predictions output/my_new_authored_predictions.json
+
+execution_failure    MCC=1.0000  TP=3 TN=12 FP=0 FN=0  support(+/-)=3/12
+wrong_data           MCC=0.0000  TP=0 TN=6 FP=6 FN=0  support(+/-)=0/12
+                     WARNING: insufficient ground-truth support; MCC reported as 0 by convention
+wrong_chart          MCC=0.0000  TP=0 TN=10 FP=0 FN=2  support(+/-)=2/10
+hard_to_read         MCC=0.0000  TP=2 TN=0 FP=10 FN=0  support(+/-)=2/10
+macro_mcc            0.2500
