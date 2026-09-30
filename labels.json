@@ -65,11 +65,25 @@
     },
     {
       "run_id": "tiny-font-clutter__glm",
-      "errors": null
+      "errors": [
+        {
+          "family": "wrong_chart",
+          "evidence": "The script adds percentage labels (autopct='%1.1f%%'). The instruction explicitly asked to label the slices only with the numbers 1 through 20. Adding unrequested text elements violates the exact label text requirement."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "(Low contrast or invisible content): The script does not change the font color of the labels. Matplotlib's default text color is black (#000000). Drawing tiny black text on a dark gray (#333333) background results in a very poor contrast ratio (well below 2.5:1), making the numbers virtually invisible."
+        }
+      ]
     },
     {
       "run_id": "tiny-font-clutter__ministral",
-      "errors": null
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "this script leaves the label text in the default black color. Black text on a #333333 dark gray background fails the contrast ratio requirement, rendering the 4-point labels completely illegible."
+        }
+      ]
     },
     {
       "run_id": "tiny-font-clutter__qwen",
