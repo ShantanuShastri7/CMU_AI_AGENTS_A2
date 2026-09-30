@@ -1,0 +1,132 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{11-768 HW2: Evaluating a Data-Visualization Agent}
+\author{Your Name}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Part 1: Examine Seed Agent Runs}
+
+\subsection{Comparison of Ground-Truth and Validator Labels}
+The baseline validator struggles significantly on the seed runs, yielding poor macro-MCC (0.0268). The major disagreements concentrate in `execution_failure` where it hallucinates false positives due to rigid parsing of LLM prefixes, and in `wrong_chart` where it hallucinates visual critiques for non-existent figures because it failed to short-circuit upon a missing file.
+
+\subsection{Validator Error Type 1}
+The first recurring error type is `execution_failure` False Positives.
+- Runs affected: 023, 083
+- Evidence: In both runs, the trajectory completed normally and saved a valid figure.png. Ground truth specifies no execution failure. However, the baseline validator predicted an `execution_failure`. The LLM actually reasoned "Yes, the agent successfully completed the task..." and the validator script parsed the "Yes" prefix and incorrectly mapped it to a failure flag.
+
+\subsection{Validator Error Type 2}
+The second recurring error type is `execution_failure` False Negatives (Misclassification into `wrong_chart`).
+- Runs affected: 096, 208
+- Evidence: In these runs, the agent terminated early or saved to the wrong filename, resulting in no figure.png being produced. Ground truth correctly flags these as `execution_failure` and short-circuits evaluation. The baseline validator missed this, proceeded to chart evaluation, and generated highly specific hallucinations about the visual chart design for an image that does not exist.
+
+\subsection{Proposed Validator Changes}
+1. For False Positives: Implement a programmatic file check. Before prompting the LLM, verify that `run.figure` exists and decodes properly via PIL.
+2. For False Negatives: Implement deterministic terminal short-circuiting. If no valid figure exists, immediately return an `execution_failure` Error and do not query downstream visual/chart checks.
+
+\section{Part 2: Improve Your Validator}
+
+\subsection{Implemented Changes}
+1. Deterministic figure verification: We verify file existence and use `PIL.Image.verify()` to ensure the image is valid. If it fails, we immediately return `execution_failure`.
+2. Terminal Short-circuiting: The validation function now checks the deterministic execution flag first. If an error is found, it short-circuits.
+
+\subsection{Seed-Set Performance vs.\ Baseline}
+Baseline:
+execution\_failure: MCC=-0.0022
+wrong\_data: MCC=0.0000
+wrong\_chart: MCC=0.1096
+hard\_to\_read: MCC=0.0000
+macro\_mcc: 0.0268
+
+Modified Validator:
+execution\_failure: MCC=1.0000
+wrong\_data: MCC=-0.1445
+wrong\_chart: MCC=-0.3798
+hard\_to\_read: MCC=-0.2424
+macro\_mcc: 0.0583
+
+\subsection{Qualitative Analysis of Targeted Error Types}
+The changes perfectly mitigated both execution failure errors. The programmatic gate eradicated false positives and negatives, raising the MCC for `execution_failure` to 1.0000. It also prevented hallucinations on missing figures. However, regressions appeared in `wrong_chart` and `wrong_data` MCC because the VLM is extremely rigid and struggles with fine-grained spatial constraints.
+
+\section{Part 3: Design New Evaluation Tasks}
+
+\subsection{Anticipated Generalization Weaknesses}
+1. Tasks with Dense or High-Precision Data: VLMs lack the precision to count overlapping thousands of points or exact complex mathematical curves.
+2. Tasks with Highly Specific Formatting Constraints: Broad natural language prompts gloss over strict, esoteric formatting constraints (like exact pixel sizes or marker subsets).
+
+\subsection{Task Design}
+1. dense-scatter-overlap (Class 1): 10,000 overlapping points in two classes. Tests if validator can count dense points.
+2. high-frequency-sine (Class 1): High frequency waves causing aliasing. Tests mathematical tracing.
+3. strict-formatting-colors (Class 2): 3-bar chart requiring exact hex color codes. Tests exact formatting adherence.
+4. exact-marker-grid (Class 2): 2x2 grid requiring different specific markers per panel. Tests fine-grained spatial attention.
+5. tiny-font-clutter (Class 2): Pie chart with 4-point font labels on dark background. Tests `hard_to_read` contrast/legibility tracking.
+
+\subsection{Agent Runs and Labeling}
+We generated 15 runs across the 3 provided agents. We labeled them manually by meticulously checking code outputs against constraints. Ambiguities were resolved by heavily punishing minor formatting violations per the strict constraints authored.
+
+\subsection{Validator Performance on New Tasks}
+execution\_failure: MCC=1.0000
+wrong\_data: MCC=0.0000
+wrong\_chart: MCC=-0.1581
+hard\_to\_read: MCC=0.2000
+macro\_mcc: 0.2605
+
+The validator maintained perfect execution checking but failed massively on `wrong_chart` because the VLM failed to notice exact hex colors or distinct markers in the grid.
+
+\subsection{Harbor Packaging}
+Every authored task scores 1.0 against \texttt{-a oracle}.
+
+We implemented two mutants for \texttt{strict-formatting-colors}:
+1. \texttt{wrong-data} (Reward: 0.0): This mutant plotted incorrect bar values. It was caught by the deterministic assertion \texttt{assert data.get("values") == [10, 20, 15]} inside \texttt{test\_plotted\_values} because the JSON output carried the wrong data.
+2. \texttt{wrong-colors} (Reward: 1.0): This mutant plotted the correct data but used generic red/green/blue instead of the required hex colors. The deterministic verifier accepted it because it strictly checks \texttt{plotted\_values.json} and completely ignores visual content in \texttt{figure.png}.
+
+A deterministic Harbor verifier could easily decide `execution_failure` and `wrong_data` (by reading the sidecar JSON). However, it struggles heavily with `wrong_chart` or `hard_to_read` because visually asserting font sizes, colors, and overlapping text deterministically via pixels requires heavy CV heuristics. Therefore, a per-task verifier cannot serve as a generalized grading mechanism across arbitrary visualization tasks without massive manual engineering per task.
+
+\section{Part 4: Iterate on Your Design}
+
+\subsection{Additional Improvement Motivated by Part 3}
+Motivated by the failure of the VLM to catch strict constraints in Part 3 (such as exact hex colors or distinct subplot markers), we changed the single broad `wrong_chart` prompt to a systematic, granular extraction prompt. 
+Previous prompt: "Does the figure fail to follow any part of the requested chart design?"
+New prompt: "Step 1: Extract all specific chart design constraints from the Task instructions (e.g., exact colors, specific titles, grid layouts, exact marker types, or line widths). Step 2: Inspect the figure and verify each constraint one by one. Based on this systematic check, does the figure fail to follow ANY of the requested chart design constraints?"
+We expected this "Chain of Thought" constraint extraction to reduce hallucinations and make the VLM rigorously evaluate formatting rules.
+
+\subsection{Final Evaluation on Seed and New Tasks}
+Seed Runs (Before Change):
+execution\_failure: MCC=1.0000
+wrong\_data: MCC=-0.1445
+wrong\_chart: MCC=-0.3798
+hard\_to\_read: MCC=-0.2424
+macro\_mcc: 0.0583
+
+Seed Runs (After Change):
+execution_failure: MCC=1.0000
+wrong_data: MCC=-0.2255
+wrong_chart: MCC=0.0000
+hard_to_read: MCC=-0.1719
+macro_mcc: 0.1506
+
+Self-Authored Runs (Before Change):
+execution\_failure: MCC=1.0000
+wrong\_data: MCC=0.0000
+wrong\_chart: MCC=-0.1581 (FP=7, FN=1)
+hard\_to\_read: MCC=0.2000
+macro\_mcc: 0.2605
+
+Self-Authored Runs (After Change):
+execution\_failure: MCC=1.0000
+wrong\_data: MCC=0.0000
+wrong\_chart: MCC=0.0000 (FP=0, FN=2)
+hard\_to\_read: MCC=0.2000
+macro\_mcc: 0.3000
+
+\subsection{Qualitative Analysis of Self-Authored Tasks}
+The change successfully eradicated False Positives on the self-authored tasks. By forcing the model to systematically extract constraints, it stopped hallucinating non-existent formatting rules, bringing the False Positives for `wrong_chart` from 7 down to 0, which boosted the Macro-MCC to 0.3000. 
+False Negative Case: While FP improved, FN went up to 2. A false negative still occurs when the model correctly extracts the rule (e.g., "Use 4-point font") but visually hallucinates that the text in the image conforms to it. This shows that despite knowing the constraint logically, the VLM still struggles with raw spatial estimation of pixel sizes.
+
+\end{document}

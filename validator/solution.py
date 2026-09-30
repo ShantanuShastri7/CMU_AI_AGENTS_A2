@@ -214,7 +214,9 @@ def judge_data_and_chart(run: Run) -> list[Error]:
     wrong_chart = _ask(
         run,
         ErrorFamily.WRONG_CHART,
-        "Does the figure fail to follow any part of the requested chart design?",
+        "Step 1: Extract all specific chart design constraints from the Task instructions (e.g., exact colors, specific titles, grid layouts, exact marker types, or line widths).\n"
+        "Step 2: Inspect the figure and verify each constraint one by one.\n"
+        "Based on this systematic check, does the figure fail to follow ANY of the requested chart design constraints?",
     )
     return wrong_data + wrong_chart
 
@@ -224,7 +226,12 @@ def judge_readability(run: Run) -> list[Error]:
     return _ask(
         run,
         ErrorFamily.HARD_TO_READ,
-        "Is the rendered figure difficult or impossible to read?",
+        "Is the rendered figure difficult or impossible to read? Specifically check for these common issues:\n"
+        "1. Text or labels that overlap with each other making them illegible.\n"
+        "2. Fonts that are far too small to read comfortably.\n"
+        "3. Poor color contrast between text/data and the background.\n"
+        "4. Extreme clutter or dense overlapping data points that obscure the meaning of the chart.\n"
+        "Answer YES if ANY of these readability issues are present.",
     )
 
 

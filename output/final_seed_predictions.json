@@ -1,0 +1,989 @@
+{
+  "predictions": [
+    {
+      "run_id": "001",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "004",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues, primarily due to extreme clutter and dense overlapping data points in the second subplot (Cosine of Data Multiplied by 3π). The high-frequency oscillations create a \"comb-like\" pattern with many overlapping vertical lines, making it difficult to discern individual data points or trends. Additionally, the x-axis in this subplot uses a logarithmic scale, which further distorts the spacing of the oscillations and contributes to visual confusion. While the other subplots are relatively clear, the second subplot's dense overlapping lines significantly impair readability."
+        }
+      ]
+    },
+    {
+      "run_id": "008",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered Sankey diagram has several readability issues:\n\n1. **Text overlap**: The labels on the left (Source) and right (Target) sides are partially overlapping with the flow lines, making them difficult to read. The labels are also very close to the edges of the diagram.\n\n2. **Poor color contrast**: The flow lines are semi-transparent and use colors that blend together, making it hard to distinguish individual flows. The text labels are also in light colors that don't contrast well with the background.\n\n3. **Extreme clutter**: The diagram has many overlapping flows that create a tangled appearance, making it difficult to follow the connections between sources and targets.\n\n4. **Small text**: The labels for the flows and the counts in parentheses are small and difficult to read, especially the numbers in the Target column.\n\nThe combination of these issues makes the diagram difficult to interpret and read clearly."
+        }
+      ]
+    },
+    {
+      "run_id": "009",
+      "errors": []
+    },
+    {
+      "run_id": "010",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "013",
+      "errors": []
+    },
+    {
+      "run_id": "016",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has several readability issues:\n\n1. **Text overlap**: Many version labels in the outer ring are crowded and overlap with each other, especially in the Chrome section. The lines connecting labels to segments are also overlapping in some areas.\n\n2. **Small font size**: The version labels in the outer ring are very small (8pt) and difficult to read, especially for the smaller segments.\n\n3. **Poor contrast**: The text labels are black on a light background, but the contrast is reduced by the thin lines and overlapping elements.\n\n4. **Extreme clutter**: The chart is extremely cluttered with many overlapping labels and lines, making it difficult to follow individual segments and their corresponding labels.\n\n5. **Missing requirements**: The chart does not properly filter out versions below 0.5% (e.g., Chrome 65.0, 68.0, etc. are included despite being below 0.5%), and the legend is not properly displayed.\n\nThe combination of these issues makes the chart difficult to read and interpret."
+        }
+      ]
+    },
+    {
+      "run_id": "021",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. While the main elements are visible, the x-axis labels (\"auth\", \"catalog\", \"search\", \"checkout\") are rotated 45 degrees and appear slightly cramped, which could make them difficult to read for some viewers. Additionally, the outlier points (shown as circles) are positioned at the top of the y-axis (around 240-300 ms) and are very close to the top edge of the plot area, which may cause them to be partially cut off or hard to distinguish from the axis line. The overall layout is functional but not optimal for clarity."
+        }
+      ]
+    },
+    {
+      "run_id": "022",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n\nThe titles of the subplots are incorrect. The left panel's title should contain the word \"linear\" but it shows \"Linear Scale\" (which is acceptable, but not exactly matching the requested wording). The right panel's title should contain the word \"log\" but it shows \"Logarithmic Scale\" (which is also acceptable, but not exactly matching the requested wording). The task specifically requested the titles to contain the words \"linear\" and \"log\", not the full phrases \"Linear Scale\" and \"Logarithmic Scale\". While the intent is clear, the exact wording requested was not followed."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues, primarily due to poor color contrast in the right panel. The orange line and data points on the logarithmic scale are difficult to distinguish from the light gray grid lines and background, especially for readers with color vision deficiencies. While the text is legible and there's no overlapping, the low contrast between the data and background in the right panel makes it challenging to read the data points clearly."
+        }
+      ]
+    },
+    {
+      "run_id": "023",
+      "errors": []
+    },
+    {
+      "run_id": "025",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n1. **Text overlap**: The country labels (e.g., \"FIN\", \"IRL\", \"NLD\") are densely packed around the outer ring, causing significant overlap and making many labels illegible.\n2. **Poor color contrast**: The chart uses a grayscale color scheme with black text on gray segments, resulting in very low contrast and making the labels hard to distinguish.\n3. **Extreme clutter**: The chart is extremely dense with 100+ country labels and percentage values crammed into a small space, obscuring the visual hierarchy and meaning.\n4. **Missing hierarchy**: The requested sunburst chart structure (Major Area → Regions → Country) is not visible; instead, it appears to be a simple pie chart with all countries at the same level.\n\nThe chart fails to meet the requirements and is largely unreadable."
+        }
+      ]
+    },
+    {
+      "run_id": "026",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n\n1. **Text/labels overlapping**: The text \"/CAfrica:\" is partially cut off and appears to be overlapping with the center of the chart, making it illegible.\n\n2. **Poor color contrast**: The text in the center is white on a dark gray background, which creates poor contrast and makes it hard to read.\n\n3. **Extreme clutter/dense data points**: The chart appears to be a simple concentric circle visualization rather than a proper sunburst chart. The data is not properly structured to show the hierarchy of Major Area, Regions, and Country as requested. The visualization is extremely simplistic and doesn't display the required information.\n\n4. **Missing elements**: The chart lacks the proper hierarchical structure with multiple levels (Major Area, Regions, Country) and doesn't show the Overall score values as segments. The legend is present but the chart itself doesn't properly represent the data.\n\nThe figure fails to meet the requirements of a sunburst chart with the specified hierarchy and data representation."
+        }
+      ]
+    },
+    {
+      "run_id": "028",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The main problem is extreme clutter and dense overlapping data points that obscure the meaning of the chart. There are numerous data points from different years plotted in the same sectors, creating a dense cluster of colored dots that make it difficult to distinguish individual data points or see the overall pattern. The blue curve for 2015 is visible, but the overlapping points from other years make the chart appear messy and hard to interpret. The text labels for the months are also somewhat difficult to read due to the crowded nature of the plot."
+        }
+      ]
+    },
+    {
+      "run_id": "029",
+      "errors": []
+    },
+    {
+      "run_id": "030",
+      "errors": []
+    },
+    {
+      "run_id": "031",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The legend entries are not exactly \"Agree, Neutral, Disagree\" as requested. Instead, the legend shows \"Agree\", \"Neutral\", and \"Disagree\" but with different colors (blue, orange, green) that don't match the expected color scheme.\n\n2. The text annotation is present but it's not in the exact format requested. The annotation says \"Highest disagreement: Open Floor Plans (48%)\" but it's placed in a box at the top of the chart, not as a text annotation directly on the chart as specified.\n\n3. The chart title is \"Survey Response Breakdown by Topic\" which is different from the requested title (which was not specified, but the chart title should be consistent with the request).\n\n4. The x-axis label is \"Topic\" which is correct, but the y-axis label is \"Percent of Respondents\" which is slightly different from the requested \"Percent of Respondents\" (though this is a minor difference).\n\n5. The bars are side-by-side as requested, but the colors used (blue, orange, green) are not specified in the request, so this is a deviation from"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues, primarily due to poor color contrast. The legend uses blue, orange, and green bars, but the text labels for the legend entries are not clearly distinguishable from the bars themselves. The orange \"Neutral\" bar is particularly difficult to see against the light background, and the green \"Disagree\" bar is also somewhat hard to distinguish. Additionally, the text annotation box has a light background that blends with the chart background, making it less prominent. While the data is generally readable, these contrast issues make the chart less accessible and harder to interpret quickly."
+        }
+      ]
+    },
+    {
+      "run_id": "034",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n\n1. The text at the bottom (\"white = positive, black = negative\") is small and partially obscured by the grid lines.\n2. The font size of the axis labels (0-14) is too small to read comfortably.\n3. The black and white squares are very small and densely packed, making it hard to distinguish individual values.\n4. The overall density of the squares creates visual clutter, making it difficult to perceive patterns in the data.\n5. The contrast between the white squares and the gray background is not strong enough, especially for smaller squares.\n\nThese issues combine to make the figure challenging to interpret, particularly for someone trying to analyze the data represented."
+        }
+      ]
+    },
+    {
+      "run_id": "038",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The plot shows total bill amounts by day of the week (Thur, Fri, Sat, Sun) rather than comparing total bill amounts by day of the week as requested. The task asked to compare total bill amounts by day of the week, but the plot shows the distribution of total bills for each day, with smokers and non-smokers split within each day.\n\n2. The plot uses a green color for smokers and grey for non-smokers as requested, but the legend shows \"Smoker\" and \"Non-smoker\" instead of \"Smokers\" and \"Non-smokers\" as specified in the requirements.\n\n3. The plot title is \"Total bill by day: smokers vs non-smokers\" instead of the requested title.\n\n4. The x-axis label is \"Day of the week\" instead of the requested \"Day of the week\" (though this is minor).\n\n5. The plot shows split violins for smokers and non-smokers within each day, but the task requested a split violin plot to compare total bill amounts by day of the week, which would typically mean showing the distribution of total bills for each day, with smokers and non-sm"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. While the dark theme provides good contrast, the green color used for smokers is very bright and may cause eye strain. The white lines representing quartiles inside the violins are thin and could be difficult to see clearly against the green background. The text labels (day of the week) are rotated at 30 degrees, which makes them slightly harder to read. The legend is present but the green color for smokers is so bright that it might be overwhelming. The overall design is functional but the combination of bright green and white on black could be challenging for some viewers."
+        }
+      ]
+    },
+    {
+      "run_id": "039",
+      "errors": []
+    },
+    {
+      "run_id": "046",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The initial flow is not set up with the specified orientation [0, 1], patch label '0', face color red, and rotation 60 degrees. Instead, the initial flow appears to be a single red segment labeled '0' but without the specified rotation.\n\n2. The functions 'branch' and 'turn' are not implemented as described. The script uses a different approach to create the Sankey diagram, with a 'side' function that generates side chains and a 'corner' function that generates corner links, but these do not match the specified function signatures or behaviors.\n\n3. The diagram does not have 8 chains on each side created using the 'branch' function. Instead, it appears to have a single chain with multiple segments.\n\n4. The title is correct, but the overall structure and flow of the diagram do not match the requested intricate flow and connections as specified."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n1. The labels on the Sankey diagram are very small and densely packed, making them hard to distinguish.\n2. The text labels are overlapping in many areas, especially in the corners and along the chain, which makes them illegible.\n3. The color contrast between the text and the background is poor in some areas, further reducing readability.\n4. The overall diagram is extremely cluttered with numerous overlapping connections and labels, obscuring the intended flow and meaning."
+        }
+      ]
+    },
+    {
+      "run_id": "047",
+      "errors": []
+    },
+    {
+      "run_id": "050",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. While the text is generally legible, there are several problems:\n\n1. The flow values (100%, 20%, 20%, 20%, 20%) are displayed in red text between the phases, but they are small and could be difficult to read, especially the 20% labels which are very close to the phase boxes.\n\n2. The final phase \"Hurray!\" is highlighted in blue with bold font as requested, but the text is very small and the blue color may create contrast issues for some viewers.\n\n3. The overall layout is simple and clear, but the small font size of the labels and flow values makes the diagram less readable than it could be. The text is not large enough to be easily readable at a glance.\n\n4. The diagram uses a simple vertical flow layout, but the narrow width of the flow paths and the small text size make it challenging to read the details without zooming in."
+        }
+      ]
+    },
+    {
+      "run_id": "051",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in several ways:\n\n1. The first panel is titled \"Varying density\" instead of \"Varying Density\" (capitalization difference).\n2. The second streamplot uses the 'jet' colormap, which is explicitly forbidden in the requirements.\n3. The fifth streamplot uses a mask, but the mask is displayed as a gray square, not using imshow as requested.\n4. The sixth streamplot shows unbroken streamlines, but the plot is not properly labeled as requested.\n5. The figure size is 8x10 inches, but the height ratios are not 1, 1, and 2 as specified.\n6. The velocity calculation uses different mathematical expressions than specified in the request."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has several readability issues:\n\n1. The \"Varying Color\" subplot uses the 'jet' colormap, which is explicitly prohibited in the requirements and is known to have poor perceptual properties and low contrast in certain areas.\n\n2. The \"Varying Line Width\" subplot has extremely dense streamlines that overlap heavily, making it difficult to distinguish individual lines and their patterns.\n\n3. The \"Streamplot with Masking\" subplot has a gray square mask that partially obscures the streamlines, and the red streamlines are difficult to follow through the masked region.\n\n4. The \"Controlling Starting Points\" subplot has overlapping streamlines and symbols that make it hard to track the starting points and their corresponding paths.\n\n5. The \"Varying Density\" and \"Streamplot with unbroken streamlines\" subplots have a high density of lines that create visual clutter, making it difficult to follow individual streamlines.\n\n6. The colorbar in the \"Varying Color\" subplot has a narrow range of colors that may be difficult to distinguish, especially for colorblind viewers.\n\nThese issues collectively make the figure difficult to read and interpret effectively."
+        }
+      ]
+    },
+    {
+      "run_id": "052",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has several readability issues:\n\n1. Text overlap: The text annotations for the phase field and composition equations are overlapping and partially obscured, making them difficult to read.\n2. Poor color contrast: The text annotations are in black on a white background, but the text for the equations is very small and blends with the background.\n3. Extreme clutter: The plot has multiple overlapping elements including curves, text annotations, and an arrow, creating a cluttered appearance.\n4. Font size: The text annotations are too small to read comfortably, especially the parameter values and equation labels.\n\nThe combination of overlapping text, small font size, and cluttered layout makes the figure difficult to read and interpret."
+        }
+      ]
+    },
+    {
+      "run_id": "053",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "055",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The text \"Peak: 412 visits\" is placed at x=3.0, y=430.0, which is outside the plot area and not clearly connected to the data point. The annotation text is not properly positioned within the chart's coordinate system, making it difficult to associate with the correct data point. Additionally, the y-axis label \"Visits\" is partially cut off at the top, and the title \"Daily Site Visits Over One Week\" is too close to the top edge, potentially causing overlap. The font size appears small, and the overall layout is cramped, making it challenging to read the labels and data clearly."
+        }
+      ]
+    },
+    {
+      "run_id": "059",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The x-axis labels in both charts are \"item number 1\", \"item number 2\", etc., instead of the requested \"X values\".\n2. The y-axis label is \"y\" in both charts, but the request specified that the x-axis should be labeled (but didn't specify a y-axis label).\n3. The second chart's title is \"Adjusted transparencies for each bar and each edge\" which matches the request, but the first chart's title is \"Uniform transparency value for all bars and edges\" which also matches the request.\n4. The bars in the second chart have different transparency levels based on the absolute value of y, which is correct, but the edge alpha is not set to be 1 minus the face alpha as requested. The edge alpha is set to a fixed value of 0.8, not 1 minus the face alpha.\n5. The bars in the second chart are colored blue if y > 0, otherwise orange, which is correct.\n6. The first chart has a uniform transparency value for all bars and edges, which is correct.\n7. The figure is 12 by"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The x-axis labels are overlapping and difficult to read due to the 45-degree rotation and the number of labels (1-20). The labels are crammed together, making them hard to distinguish. Additionally, the text at the bottom of the chart is partially cut off, which further reduces readability. While the chart itself is functional, the label overlap and cutoff text make it challenging to read the x-axis values clearly."
+        }
+      ]
+    },
+    {
+      "run_id": "060",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The text labels for the causes are very small (8pt font) and are densely packed, making them difficult to read, especially the ones on the lower branches. The lines connecting the causes to the main spine are thin and can be hard to follow. The overall layout is somewhat cluttered, and while the main categories are readable, the individual causes are challenging to distinguish and read clearly."
+        }
+      ]
+    },
+    {
+      "run_id": "062",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n\n1. The title of the plot is \"Commute Times by Transport Mode\" instead of the requested title, which should be \"Commute Times by Transport Mode\" (this is actually correct, so this is not a difference).\n2. The x-axis label is \"Transport Mode\" which is correct.\n3. The y-axis label is \"Minutes\" which is correct.\n4. The x-tick labels are \"Bus\", \"Bike\", \"Car\", \"Train\" which is correct.\n5. The violins are at positions 1, 2, 3, 4 as requested.\n6. The violin plot shows medians and min/max as requested.\n7. The median markers are present as red circles on top of the violins.\n\nHowever, the plot does not show the exact median values as markers at the correct positions. The median markers are present, but the plot does not show the exact median values as requested. The median markers are present, but the plot does not show the exact median values as requested. The median markers are present, but the plot does not show the exact median values as requested. The median markers are present, but"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The red circular markers representing the medians are partially obscured by the violin plots, making them difficult to distinguish clearly. Additionally, the vertical lines (extrema bars) extend beyond the violin shapes and overlap with the markers, further reducing clarity. While the text labels are legible, the visual clutter from overlapping elements makes it harder to interpret the exact median values at a glance."
+        }
+      ]
+    },
+    {
+      "run_id": "065",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "068",
+      "errors": []
+    },
+    {
+      "run_id": "069",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. While the overall structure is clear, there are several problems:\n\n1. **Text overlap**: The labels for the innermost ring (Major Area) are crowded and partially overlap with each other, making them difficult to read clearly.\n\n2. **Poor color contrast**: The legend at the bottom shows \"Africa\" listed twice with different colors (green and light green), which is confusing. The colors for the different regions are not consistently applied, and some colors (like the light green for Africa) are very similar to others, making it hard to distinguish between them.\n\n3. **Extreme clutter**: The outermost ring (Country level) has many small segments with country names that are too small to read comfortably. The text is so small that it's difficult to identify individual countries.\n\n4. **Font size**: The font size for the country names in the outer ring is too small to read easily, especially for the smaller segments.\n\nThese issues make the chart difficult to read and interpret, particularly for the detailed information at the country level."
+        }
+      ]
+    },
+    {
+      "run_id": "070",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The legend labels are overlapping with each other and with the data lines, making them difficult to read. The text in the legend is also quite small and some labels are partially obscured by the lines they represent. Additionally, the different colored lines are very close together in certain regions, creating visual clutter that makes it hard to distinguish between them. The combination of overlapping text and dense data points reduces the overall readability of the chart."
+        }
+      ]
+    },
+    {
+      "run_id": "074",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n\n- The task requested two plots on the same axes with different left and right scales, using `data1 = np.exp(t)` and `data2 = np.sin(2 * np.pi * t)`.\n- The plot shows the correct data: `exp(t)` on the left y-axis and `sin(2πt)` on the right y-axis.\n- However, the plot title is \"Dual Y-Axis Plot\" instead of the expected \"Dual Y-Axis Plot\" (which is correct), but the y-axis labels are mislabeled: the left y-axis is labeled \"exp(t)\" and the right y-axis is labeled \"sin(2πt)\", which is correct.\n- The issue is that the plot does not have a title, and the y-axis labels are not properly aligned with the data. The left y-axis is labeled \"exp(t)\" and the right y-axis is labeled \"sin(2πt)\", which is correct.\n- The plot is correct in terms of the data and the dual y-axis setup, but the labels are not properly aligned with the data. The left y-axis is labeled \"exp(t)\" and the"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n1. The left y-axis (exp(t)) has values ranging from 0 to over 20,000, while the right y-axis (sin(2πt)) ranges from -1.0 to 1.0. This extreme difference in scales causes the exp(t) data to dominate the plot, making the sin(2πt) oscillations appear as nearly flat lines except at the very top and bottom of the plot.\n2. The labels and data points for the exp(t) function are so large that they obscure the sin(2πt) function, especially in the regions where exp(t) is large.\n3. The text labels (e.g., \"exp(t)\", \"sin(2πt)\") and axis labels are small and may be hard to read, especially given the large range of the exp(t) data.\n4. The plot is cluttered with overlapping data points, making it difficult to discern the individual components of the plot.\n\nThese issues make the figure challenging to interpret, particularly for the sin(2πt) component."
+        }
+      ]
+    },
+    {
+      "run_id": "075",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The first subplot shows three curves (g(s), g(s+0.1), and g(s+0.2)) as requested, but the x-axis range is from 0 to 3, not 0 to 5 as implied by the original request (though this is a minor difference).\n\n2. The second subplot is a 3D surface plot as requested, but the function E is defined as cos(sqrt(P^2 + Q^2)) as required, with P and Q ranging from -5 to 5.\n\n3. The suptitle is exactly \"A Story of 2 Subplots\" as requested.\n\n4. The first subplot has a legend and grid as required.\n\n5. The figure is saved as figure.png as required.\n\nThe main difference is that the first subplot's x-axis range is 0-3 instead of 0-5, but this is a minor deviation. The overall structure, content, and requirements are met."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The text in the 3D plot's z-axis label is partially obscured by the grid lines and the surface itself, making it difficult to read. The labels \"P\" and \"Q\" on the x and y axes are also partially hidden by the surface plot. Additionally, the color gradient in the 3D plot creates some visual clutter that makes it harder to distinguish the exact values on the surface. The text in the legend and axis labels is generally legible, but the overlapping elements in the 3D plot reduce overall readability."
+        }
+      ]
+    },
+    {
+      "run_id": "077",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The legend labels are incorrect: The plot shows \"Oroville\" and \"Shasta\" as the labels, but the legend in the plot shows \"Oroville\" and \"Shasta\" as the labels, which is correct. However, the plot shows the Shasta line as orange and the Oroville line as blue, but the legend shows the Shasta line as orange and the Oroville line as blue, which is correct. The issue is that the legend shows \"Peak\" as a separate entry, which is not requested. The legend should only show \"Oroville\" and \"Shasta\".\n\n2. The peak annotation is incorrect: The peak annotation shows \"Peak: 3452.7 TAF (week 17)\", but the peak value for Oroville is 3452.7 TAF in week 17, which is correct. However, the peak point is marked with a red dot, which is correct, but the annotation is placed at the wrong position. The annotation should be placed next to the peak point, not at the peak point.\n\n3. The y-axis does not start at"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. Specifically:\n1. The text annotation \"Peak: 3452.7 TAF (week 17)\" is partially cut off at the top right of the plot, making it difficult to read completely.\n2. The red marker for the peak is very small and may be hard to see clearly against the blue line, especially for those with visual impairments.\n3. The legend has a red dot labeled \"Peak\" which is not clearly distinguished from the data points and could be confusing.\n4. The y-axis labels are somewhat cramped and could be improved for better readability."
+        }
+      ]
+    },
+    {
+      "run_id": "079",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The colorbar on the right side is very large and takes up a significant portion of the image, making the plot itself appear cramped. The text labels for the axes (X, Y, Z) and the title are small and could be difficult to read, especially the axis labels which are partially obscured by the plot's perspective. The color contrast between the different shades in the CMRmap colormap is not very strong, which may make it hard to distinguish between different contour levels. Additionally, the grid lines and the plot's surface are somewhat cluttered, which could make it difficult to interpret the data accurately."
+        }
+      ]
+    },
+    {
+      "run_id": "080",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data does not differ from what was requested in the following way:\n- The chart displays the correct data from the `checkouts.csv` file.\n- The bars are in the same order as the rows in the file (Mystery, Fantasy, Romance, Biography, Science, Poetry, Travel).\n- The genre names are used as x-axis tick labels.\n- The y-axis starts at 0.\n- The chart has a title (\"Genre Checkouts Last Year\") and labeled axes (\"Genre\" for x-axis, \"Checkouts\" for y-axis).\n\nHowever, the requirement to \"Print each bar's checkout count above (or on) the bar as a plain integer with no thousands separator\" is not met. The chart does not display the checkout numbers on top of the bars. This is a significant difference from the requested output."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The genre labels on the x-axis are rotated 45 degrees, but they are still overlapping with each other, making them difficult to read clearly. Additionally, the bar labels (checkout counts) are not visible in the provided image, which suggests they may be missing or improperly placed, further reducing readability. The overall layout appears cramped, especially with the rotated labels, which can make the chart hard to interpret."
+        }
+      ]
+    },
+    {
+      "run_id": "081",
+      "errors": []
+    },
+    {
+      "run_id": "082",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in one key way: the order of the services on the x-axis is incorrect. The task specifies that the services should be plotted in the order given: auth, catalog, search, checkout. However, the plot shows them in the order: auth, catalog, search, checkout — which is actually correct. Wait, let me recheck.\n\nActually, the plot shows the services in the order: auth, catalog, search, checkout, which matches the requested order. The median lines are correctly positioned, the whiskers follow the default 1.5x IQR rule, and outliers are shown. The title and axis labels are present. The only potential issue is the deprecation warning about the `labels` parameter, but the plot was generated correctly using the updated `tick_labels` parameter in the final version.\n\nTherefore, the plot appears to meet all requirements. The answer should be NO.\n\nWait, let me re-examine the plot. The services are labeled as auth, catalog, search, checkout from left to right, which matches the requested order. The median lines are at the correct positions (e.g., auth median is around 97, catalog around 61, search"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. Specifically, the y-axis labels (latency values) are too close together and the numbers are small, making them difficult to read clearly. The tick labels on the y-axis are also very close to each other, which can cause visual clutter and make it hard to distinguish between values. Additionally, the outlier points (e.g., 240 and 300) are far above the main data range, which may make the plot appear unbalanced and harder to interpret. While the x-axis labels are clear, the overall scale and spacing of the y-axis make the chart challenging to read comfortably."
+        }
+      ]
+    },
+    {
+      "run_id": "083",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues, primarily due to extreme clutter and dense overlapping data points in the bottom two plots (the gamma-distributed data). The \"Horizontal Event Plot (Gamma)\" and \"Vertical Event Plot (Gamma)\" subplots contain a very high density of data points (80 categories × 70 events), resulting in severe visual overlap that obscures the meaning of the chart. While the font size is set to 8.0 and colors are distinct, the sheer number of overlapping points in the bottom plots makes it difficult to discern individual events or patterns, which violates the requirement for clarity. The top plots are more readable, but the overall figure is compromised by the clutter in the bottom row."
+        }
+      ]
+    },
+    {
+      "run_id": "086",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. Specifically:\n1. The text labels on the x-axis (numbers 1-20) are very small and crowded, making them difficult to read clearly.\n2. The bars in the second chart are very thin and close together, causing potential overlap and making it hard to distinguish individual bars.\n3. The color contrast between the bars and the background is not optimal, especially in the second chart where the bars are semi-transparent and some colors blend together.\n4. The y-axis labels and titles are small and may be hard to read at a glance.\n\nThese issues make the chart difficult to interpret accurately."
+        }
+      ]
+    },
+    {
+      "run_id": "087",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The text labels and legends are too small and crowded, making them difficult to read. The font size is too small for comfortable reading, especially in the smaller subplots. The color contrast between the lines and the background is poor, with the blue and green lines being hard to distinguish from each other and the grid lines. The overall layout is cluttered with overlapping elements, particularly in the top-left subplot where the x-axis labels are cramped and hard to read. The combination of these factors makes the figure difficult to interpret."
+        }
+      ]
+    },
+    {
+      "run_id": "089",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "090",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in one key way: the title of the chart is \"Commute Times by Mode of Transport\" instead of the requested title. The request specified that the chart should have a title, but did not specify the exact title text. However, the generated title is a reasonable interpretation of the request. \n\nAll other requirements are met:\n- The plot is a vertical violin plot with one violin per mode at positions 1, 2, 3, 4\n- The modes are labeled correctly as Bus, Bike, Car, Train\n- showmedians=True is used, showing medians and min/max\n- Each group's median is plotted as a red circular marker\n- The y-axis is labeled \"Minutes\"\n- The x-axis has the correct labels\n\nThe only difference is the title, which is a minor deviation from the unspecified requirement."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. While the text labels (Bus, Bike, Car, Train) and axis labels are legible, the red circular markers representing the medians are small and may be difficult to see clearly against the light blue violins, especially for viewers with color vision deficiencies. The markers are also not clearly distinguishable from the median lines within the violins. The overall color contrast between the red markers and the light blue violins is not strong enough, which could make the median markers hard to spot. Additionally, the default blue lines showing the min/max (extrema) are thin and may be difficult to see clearly against the background."
+        }
+      ]
+    },
+    {
+      "run_id": "091",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The subplot titles are incorrect. The request specified the titles should be 'center', 'zero', 'axes', and 'data', but the actual plot shows 'center', 'zero', 'axes', and 'data' in the wrong positions. The 'center' subplot is in the top-left, 'zero' in the top-right, 'axes' in the bottom-left, and 'data' in the bottom-right, which is correct, but the titles are not properly aligned with the spine positioning requirements.\n\n2. The spine positioning is not correctly implemented. The request specified that in the 'center' subplot, the left and bottom spines should be positioned at the center, but in the actual plot, the spines are at the edges of the plot area.\n\n3. The 'axes' subplot should have the left spine at 0.3 on the axes and the bottom spine at 0.3 on the axes, but in the actual plot, the spines are at the edges of the plot area.\n\n4. The 'data' subplot should have the left spine at 2 on the data and the bottom spine at 2 on the data"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The text labels for the subplots (\"center\", \"zero\", \"axes\", \"data\") are overlapping with the grid lines and data points, making them difficult to read. The font size appears to be too small, especially for the axis labels and tick marks, which are hard to discern. The blue lines of the cosine wave are dense and can be hard to follow, particularly in the \"data\" subplot where the x-axis extends to 12.5, creating a cluttered appearance. The overall layout is somewhat cramped, and the combination of overlapping text and dense data points reduces the clarity of the visualization."
+        }
+      ]
+    },
+    {
+      "run_id": "096",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "097",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from the request in one key aspect: the colorbar label is incorrect. The colorbar is labeled \"f(x, y) = sin(x) * cos(y)\" but the actual label should be just \"f(x, y)\" or \"f(x, y) = sin(x) * cos(y)\" as specified. However, the label on the colorbar is \"f(x, y) = sin(x) * cos(y)\" which is correct. Wait, that's actually correct. Let me recheck.\n\nActually, the colorbar label is \"f(x, y) = sin(x) * cos(y)\" which matches the requirement. The only potential issue is that the annotation text says \"Max: 1.000\" which is correct, but the point is marked with a red circle with a white edge, which is fine. The levels are correct, the colormap is viridis (perceptually uniform), the region is correct, and the title and axes are labeled. The only possible difference is that the annotation text is \"Max: 1.000\" which is correct, but the point is marked with a red circle with a white edge, which is fine. The"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues, specifically:\n\n1. The text annotation \"Max: 1.000\" is placed very close to the data point and is partially obscured by the contour lines, making it slightly difficult to read.\n2. The font size of the annotation text appears small relative to the overall figure, which may make it hard to read at a glance.\n3. The colorbar label \"f(x, y) = sin(x) * cos(y)\" is vertically oriented and may be challenging to read due to its placement and orientation.\n\nWhile the figure is generally clear, these issues collectively make it somewhat difficult to read."
+        }
+      ]
+    },
+    {
+      "run_id": "098",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n1. The exponential data (Data 1) grows rapidly and dominates the plot, making the sine wave (Data 2) nearly invisible.\n2. The y-axis scale is not adjusted for both datasets, causing the sine wave to be compressed at the bottom of the plot.\n3. The two lines are plotted on the same y-axis, which makes it impossible to clearly see the behavior of both datasets simultaneously.\n4. The legend is present but the overlapping and scale issues make it hard to interpret the relationship between the two datasets.\n\nThe plot fails to effectively show both datasets with different scales, which is the intended goal of using dual y-axes."
+        }
+      ]
+    },
+    {
+      "run_id": "099",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The bars are overlapping significantly, creating a cluttered appearance that makes it difficult to distinguish individual bars and their values. The transparency (alpha=0.5) was applied, but the overlapping of the bars with different colors creates a visual mess where it's hard to determine the individual contributions. The radial labels (2, 4, 6, 8, 10) are also partially obscured by the bars. The color scheme, while using a perceptually uniform colormap, results in many similar shades that blend together when overlapped, further reducing readability. The combination of overlapping bars, dense data points, and partially obscured labels makes the chart difficult to read."
+        }
+      ]
+    },
+    {
+      "run_id": "103",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "104",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n1. The annotation text reads \"Peak: 412 visits\" but the point it points to is not exactly at (3.0, 412.0) as required. The annotation is placed at (3.0, 430.0) in data coordinates, which is correct, but the arrow points to a point that appears to be slightly off the actual data point for Thursday (which is at x=3, y=412).\n2. The y-axis does not start exactly at zero; it starts at 0 but the scale is not clearly visible, and the annotation is placed at y=430.0, which is above the actual data point.\n3. The annotation text is placed at (3.0, 430.0), which is within the allowed tolerance (0.6 in x and 35 in y), but the arrow points to a point that is not exactly at the data point for Thursday.\n4. The chart title and axis labels are present, but the annotation text is not exactly at the specified coordinates, and the arrow is not perfectly aligned with the data"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. Specifically, the text annotation \"Peak: 412 visits\" is placed at (3.0, 430.0) which is above the data point for Thursday (x=3, y=412). However, the text is not clearly connected to the data point and appears to be floating in the upper right area of the chart. The annotation text is small and may be difficult to read, especially since it's not clearly linked to the peak point. Additionally, the y-axis label \"Number of Visits\" is partially cut off at the top of the chart, which could make it hard to read. The overall chart is not cluttered, but the annotation placement and potential cutoff of the y-axis label contribute to readability issues."
+        }
+      ]
+    },
+    {
+      "run_id": "105",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The x-axis label is \"Four separate samples\" in both plots, but the requested label was \"Four separate samples\" (this is correct).\n2. The y-axis label is \"Measured values\" in both plots, which matches the request.\n3. The titles are \"Standard box plot\" and \"Notched box plot\", which matches the request.\n4. The data sets are labeled as 'y1', 'y2', 'y3', and 'y4', which matches the request.\n5. The colors are orange for 'y1', purple for 'y2', yellow for 'y3', and cyan for 'y4', which matches the request.\n6. The plots are arranged in one row and two columns, with the standard box plot on the left and the notched box plot on the right, which matches the request.\n7. Both plots have horizontal grid lines, which matches the request.\n\nHowever, the plots do not show the data sets with standard deviations of 2, 3, 4, and 5 as requested. The data sets are generated with standard deviations of 2, 3, 4,"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. Specifically:\n1. The x-axis label \"Four separate samples\" is partially cut off at the bottom of the left plot.\n2. The y-axis label \"Measured values\" is partially cut off at the top of the right plot.\n3. The text labels for the data sets (y1, y2, y3, y4) are very small and may be difficult to read, especially for y2, y3, and y4 which are close together.\n4. The notched box plot on the right has overlapping notches and data points that make it slightly harder to interpret the differences between the groups.\n\nThese issues, particularly the truncated labels and small text, make the figure difficult to read."
+        }
+      ]
+    },
+    {
+      "run_id": "106",
+      "errors": []
+    },
+    {
+      "run_id": "108",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n\nThe overall title of the figure is \"Seasonal Temperature Comparison Across Cities\", which does not contain the word \"temperature\" as required. The task specifically requested that the overall title (suptitle) must contain the word \"temperature\". While the individual panel titles and axis labels are correct, the main title fails to meet this requirement."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. While the text is generally legible, the y-axis labels and titles are overlapping in some panels, particularly in the top-left (Oslo) and bottom-left (Sydney) plots. The y-axis label \"Temperature (°C)\" is partially obscured by the title in the Oslo panel, and the x-axis label \"Season\" is cut off in the Sydney panel. Additionally, the font size appears small, and the overall layout is cramped, making it slightly difficult to read the values clearly."
+        }
+      ]
+    },
+    {
+      "run_id": "111",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n1. **Extreme clutter and dense overlapping data points**: The 3D bar plot is extremely crowded, with 30 bars per layer and 4 layers, resulting in severe overlap and occlusion of bars, making it hard to distinguish individual bars or trends.\n2. **Poor color contrast**: The colors (purple, orange, grey, pink) are not distinct enough, especially when combined with the 80% opacity, leading to visual blending and confusion.\n3. **Text labels are hard to read**: The x-axis labels (0-29) are cramped and partially obscured by the bars, and the y-axis labels (y=0, y=1, y=2, y=3) are difficult to read due to the 3D perspective and overlapping elements.\n4. **Overlapping text and data**: The title and axis labels are partially obscured by the bars and the 3D perspective, reducing readability.\n\nThese issues collectively make the chart difficult to interpret."
+        }
+      ]
+    },
+    {
+      "run_id": "112",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The y-axis labels are difficult to read due to poor contrast between the text and the background, and the slanted lines indicating the broken axis are not clearly visible. The text labels on the y-axis are small and the gridlines are faint, making it challenging to read the values accurately. Additionally, the broken axis markers are not clearly distinguishable from the data points, which could cause confusion."
+        }
+      ]
+    },
+    {
+      "run_id": "115",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. Specifically, the circular markers representing the medians are not visible on top of the violins because they are either obscured by the violin plots or not plotted at all. The medians are shown as horizontal lines within the violins (due to showmedians=True), but the requirement is to plot each group's median as a single circular marker on top of the violins. Since these markers are missing, the chart does not meet the specified requirements, making it difficult to read the exact median values clearly. Additionally, the default color scheme may result in poor contrast between the median lines and the violin fill, further reducing readability."
+        }
+      ]
+    },
+    {
+      "run_id": "117",
+      "errors": []
+    },
+    {
+      "run_id": "124",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n1. **Text/labels overlapping**: The radial axis labels (e.g., 0°, 45°, etc.) are close together and partially overlap with the bars, making them hard to distinguish.\n2. **Poor color contrast**: The bars use a range of colors from dark to light, but many bars are semi-transparent and overlap, causing visual clutter and making it hard to distinguish individual bars.\n3. **Extreme clutter**: With 30 bars densely packed in a polar plot, the overlapping and varying thicknesses create a visually busy and confusing image, obscuring the meaning of the data.\n4. **Small font size**: The radial axis labels and the title are not large enough to be easily readable, especially given the complexity of the plot.\n\nThese issues collectively make the chart difficult to interpret."
+        }
+      ]
+    },
+    {
+      "run_id": "125",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in one way: the y-axis does not start at 0. The chart shows the y-axis starting at approximately 1800, which violates the requirement that the y-axis must start at 0. The other requirements (order of bars, x-tick labels, bar labels, title, and axis labels) are met."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The x-axis labels (genre names) are rotated 45 degrees and are overlapping, making them difficult to read clearly. Additionally, the labels are very close together, which contributes to visual clutter and makes it hard to distinguish between adjacent genres. While the text is legible, the overlapping and tight spacing reduce overall readability."
+        }
+      ]
+    },
+    {
+      "run_id": "126",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The text \"∫ f(x)dx\" is overlapping with the shaded region and the curve, making it difficult to read clearly. The integral formula is positioned in the middle of the shaded area, which causes visual clutter and makes the text hard to distinguish from the background. Additionally, the labels \"a\" and \"b\" on the x-axis are very small and could be difficult to read, especially since they're not clearly separated from the x-axis line. The overall layout is somewhat cramped, which contributes to the readability challenges."
+        }
+      ]
+    },
+    {
+      "run_id": "128",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has multiple readability issues:\n1. The bars are extremely cluttered and overlapping, making it difficult to distinguish individual bars or patterns.\n2. The colors are not clearly distinguishable - many bars appear to be similar shades, and the \"purple\", \"orange\", \"grey\", and \"pink\" colors are not clearly visible or properly represented.\n3. The y-axis labels are not properly formatted - they show a range of values (-5 to 5) but the bars are not clearly associated with discrete layers as requested.\n4. The x-axis is labeled with values from 0 to 30, but the bars extend beyond this range, creating confusion.\n5. The last bar of each set is not clearly colored black as requested - the black bars are not consistently visible or distinguishable.\n6. The overall visualization is too dense and complex, making it difficult to interpret the data effectively."
+        }
+      ]
+    },
+    {
+      "run_id": "129",
+      "errors": []
+    },
+    {
+      "run_id": "130",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. While the 3D scatter plot is generally clear, there are several problems:\n\n1. The text labels on the axes are difficult to read due to their small size and the angle at which they appear in the 3D perspective.\n2. The colorbar on the right side has very small text that is hard to read.\n3. The grid lines and data points are somewhat cluttered, making it difficult to distinguish individual points, especially in the dense central region.\n4. The title \"Cars: 0-60 time, mileage and power\" is not very descriptive and could be clearer.\n\nThese issues make the figure challenging to interpret, particularly for someone trying to extract specific information from the visualization."
+        }
+      ]
+    },
+    {
+      "run_id": "131",
+      "errors": []
+    },
+    {
+      "run_id": "135",
+      "errors": []
+    },
+    {
+      "run_id": "136",
+      "errors": []
+    },
+    {
+      "run_id": "141",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The chart is a horizontal stacked bar chart, which matches the request.\n2. The title \"Favorite Sports by Country\" is correctly displayed.\n3. The x-axis is labeled \"Number of Responses\" and the y-axis is labeled \"Country\", which is correct.\n4. The data is correctly represented with each country having a stacked bar for the five sports.\n\nHowever, the colors used in the chart do not match the requested `RdYlGn` colormap. The colors in the chart appear to be different, possibly using a different colormap or default colors. The request specified using `plt.colormaps['RdYlGn'](np.linspace(0.15, 0.85, data.shape[1]))` to color the different categories, but the colors in the chart do not reflect this.\n\nAdditionally, the labels on the bars are not visible in the provided image, which might indicate that the value labels were not added as requested. The request specified labeling each stacked bar with their respective data, but this is not clearly visible in the image.\n\nTherefore, the plotted data differs from the requested specifications in terms of color scheme"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The text labels inside the stacked bars are small and some are difficult to read due to low contrast with the background colors. Additionally, the labels are crowded and overlap in some cases, making them illegible. The font size is too small for comfortable reading, especially for the values inside the bars. The color contrast between the text and the colored segments is poor in several instances, further reducing readability. The chart is also somewhat cluttered due to the number of categories and the dense labeling."
+        }
+      ]
+    },
+    {
+      "run_id": "142",
+      "errors": []
+    },
+    {
+      "run_id": "143",
+      "errors": []
+    },
+    {
+      "run_id": "145",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "146",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n1. Text overlap: Many labels, especially the causes under each category, are overlapping or too close together, making them hard to distinguish.\n2. Font size: The font size for the causes is very small, particularly for the labels on the lower branches, which makes them difficult to read.\n3. Poor color contrast: The diagram uses black text on a white background, which is generally good, but the text is so small and densely packed that readability is compromised.\n4. Extreme clutter: The diagram is very dense, with many lines and labels crisscrossing, which obscures the clarity of the relationships and makes it hard to follow the structure."
+        }
+      ]
+    },
+    {
+      "run_id": "150",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The z-axis label is \"Probability (Gaussian)\" instead of just \"Probability\" as implied by the task.\n2. The y-axis label is \"Y-axis (2 to 10)\" instead of just \"Y-axis\" as requested.\n3. The x-axis label is \"X-axis (0 to 20)\" instead of just \"X-axis\" as requested.\n4. The plot title is \"3D Plot with Gaussian Distributions and Polygons\" instead of a more general title as implied by the task.\n5. The polygons are not clearly visible as filled areas under the lines; they appear as surface plots that blend into the background.\n6. The z-axis limit is set to 0.08, which may not be appropriate for all Gaussian distributions, especially for y=2 where the peak is higher.\n7. The legend shows the y-values as \"y=2\", \"y=3\", etc., but the actual lines are not clearly distinguishable due to overlapping and color choices.\n8. The plot does not show the polygons as distinct filled areas under the lines, which is a key requirement of the task."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n1. The legend text is small and partially overlaps with the plot area, making it hard to read.\n2. The lines and polygons are densely packed, creating visual clutter that obscures the individual curves.\n3. The color contrast between the lines and the background is poor, especially for some colors like the light green and yellow, which blend into the grid.\n4. The z-axis label is cut off and partially illegible (\"Probability (Gaussian)\" is truncated).\n5. The overall density of the plot makes it challenging to distinguish individual components."
+        }
+      ]
+    },
+    {
+      "run_id": "153",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in one way: the title of the chart is \"Exam Score vs Hours Studied\" instead of \"Exam Score against Hours Studied\" as specified in the task. The rest of the requirements (scatter plot, single call to `Axes.scatter`, correct axes labels, correct data points, etc.) are met."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has several readability issues:\n1. The y-axis labels (exam scores) are not clearly visible and are cut off at the top of the plot, making it difficult to read the exact values.\n2. The font size for the axis labels and title appears to be too small, reducing legibility.\n3. The data points are closely spaced, especially in the lower range, which could make it hard to distinguish individual points.\n4. The overall plot size is small, contributing to the cramped appearance and making the text difficult to read.\n\nThese issues collectively make the figure difficult to read."
+        }
+      ]
+    },
+    {
+      "run_id": "155",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in several ways:\n\n1. The first plot is labeled \"Mobius strip\" but the requested function was not specified to be a Mobius strip. The function used appears to be a different parametric surface.\n\n2. The second plot is labeled \"Masked polar surface\" but the requested function was not specified to be a polar surface with the specific formula used.\n\n3. The colormaps used are not the requested ones. The first plot uses a jet-like colormap (though the code attempts to use a custom blue-yellow colormap), and the second plot uses a RdBu colormap instead of the requested dark red to light blue colormap.\n\n4. The z-limits for the first plot are not set to -2 to 2 as requested. The first plot shows z-values from approximately -2.0 to 2.0, but the second plot has different z-limits.\n\n5. The suptitle is \"Triangulated 3D surfaces\" instead of the requested title.\n\n6. The plots are not exactly as described in the request - the first plot uses a different parameterization and the second plot uses a different function than what was requested."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The text labels on the axes and titles are too small to read comfortably, especially the axis labels and tick marks. The color gradients in both plots are very dense, with many colors transitioning closely, which can make it difficult to distinguish individual data points or trends. The z-axis labels on the right plot are particularly hard to read due to their small size and the complex 3D perspective. The overall visual clutter from the dense color transitions and overlapping grid lines makes the plots challenging to interpret."
+        }
+      ]
+    },
+    {
+      "run_id": "156",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n\nThe y-axis does not start at 0 as required. The y-axis in the chart starts at approximately 38,000, which violates the requirement that the y-axis must start at 0. The chart also shows a y-axis range that does not begin at 0, which is a clear deviation from the specified requirements."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. While the text is generally legible, the x-axis labels (dates) are somewhat compressed and could be difficult to read at a glance, especially the month abbreviations. The labels are not overlapping, but the spacing between them is tight, which may make them hard to distinguish for some users. The font size appears adequate, and there is good contrast between the line and background. However, the tight spacing of the x-axis labels constitutes a readability issue, particularly for smaller screens or when printed."
+        }
+      ]
+    },
+    {
+      "run_id": "161",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The main problem is the extreme clutter and dense overlapping data points that obscure the meaning of the chart. The sine wave on the right y-axis (blue line) is so densely packed with vertical lines that it creates a \"staircase\" effect, making it difficult to discern the actual sinusoidal pattern. The left y-axis (red line) shows the exponential function, but the combination of the two scales creates visual confusion. The labels and legend are also difficult to read due to the small font size and overlapping elements. The logarithmic scale on the left axis makes the exponential growth appear as a straight line, but the overall visualization is cluttered and hard to interpret."
+        }
+      ]
+    },
+    {
+      "run_id": "163",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n\n1. The point marked as the maximum is incorrect. The code uses `np.argmax(Z)` and `np.argmin(Z)` to find the indices of the maximum and minimum values in the flattened array Z. However, `np.argmax(Z)` returns the index of the maximum value in the flattened array, which corresponds to a 1D index. This index is then used directly as the x-coordinate, which is incorrect because the x-coordinate should be the actual x-value from the grid at that position. Similarly, `np.argmin(Z)` is used for the y-coordinate, which is also incorrect.\n\n2. The annotation text is incorrect. The annotation says \"Max Potential\" but the point marked is not the actual maximum of the function f(x, y) = sin(x) * cos(y). The maximum value of this function is 1.0, which occurs at points where sin(x) = 1 and cos(y) = 1, i.e., x = π/2 + 2kπ and y = 2mπ for integers k and m. Within the given grid, the maximum occurs at x ≈ 1.57"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. Specifically, the text annotation for the maximum point is placed at the wrong location due to a bug in the code: `np.argmax(Z)` returns the flattened index, not the (x, y) coordinates. This causes the marker and annotation to be placed at an incorrect grid point, which may be misleading. Additionally, the annotation text is very close to the marker and could be difficult to read depending on the display. While the colorbar and labels are legible, the incorrect placement of the annotation makes the figure potentially misleading and reduces its overall clarity."
+        }
+      ]
+    },
+    {
+      "run_id": "164",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The text \"race interrupted\" is partially overlapping with the red bar segment, making it difficult to read clearly. The annotation text is also very close to the data points, which could cause confusion. While the main labels and axes are readable, the annotation text is not clearly separated from the data, creating a potential readability problem."
+        }
+      ]
+    },
+    {
+      "run_id": "165",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in one key way: the y-axis does not start at 0. The plot shows a y-axis that begins at approximately 0 but the visible range starts around 35, which violates requirement #4 that the y-axis must start at 0 to ensure yields are comparable. The plot also appears to have a different title than requested (\"Mean Yield of Reaction Conditions with Standard Error of the Mean\" vs. the expected title), and the x-axis labels are not properly aligned with the conditions in the specified order."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The x-axis labels (\"Baseline\", \"Cat-A\", \"Cat-B\", \"Cat-C\", \"Cat-D\") are too close together and partially overlap, making them difficult to read clearly. Additionally, the font size of the labels appears small, and the overall chart is somewhat cramped, which contributes to the difficulty in reading the labels accurately."
+        }
+      ]
+    },
+    {
+      "run_id": "166",
+      "errors": []
+    },
+    {
+      "run_id": "167",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. Specifically, the text annotation for the peak (\"Peak: 3452.7 TAF (week 17)\") is partially cut off at the top right of the chart, making it difficult to read. The annotation is also very close to the data point and the edge of the plot area, which can cause overlap and reduce legibility. Additionally, the font size of the annotation appears small and may be hard to read comfortably."
+        }
+      ]
+    },
+    {
+      "run_id": "168",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "169",
+      "errors": []
+    },
+    {
+      "run_id": "170",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues, particularly in the bottom-left subplot (Horizontal Event Plot (Gamma)). The red dots are extremely dense and overlapping, creating a \"cluttered\" appearance that makes it difficult to discern individual data points or patterns. The font size of 8.0 is too small for the amount of data being displayed, and the high density of points obscures the meaning of the chart. While the top two plots are relatively clear, the bottom-left plot is difficult to read due to extreme clutter."
+        }
+      ]
+    },
+    {
+      "run_id": "171",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "173",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n\nThe text in the shaded region displays the integral formula as `\\int_{3}^{10} [(z - 4)(z - 6)(z - 8) + 90] dz`, but the formula is rendered in a way that includes LaTeX-style escaping (e.g., `\\int` instead of a proper integral symbol). This is likely due to the way the text is formatted in the code, where the backslashes are not properly escaped for the plot. The integral symbol should be displayed correctly as a mathematical symbol, not as raw LaTeX code. Additionally, the text box appears to be slightly misaligned and may not be perfectly centered in the shaded region."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The text box containing the integral formula is poorly formatted and overlaps with the curve, making it difficult to read. The text appears to be a raw LaTeX string (e.g., \"\\int_{3}^{10} [(z - 4)(z - 6)(z - 8) + 90] dz\") instead of properly rendered math, and it's placed directly on the plot where it partially obscures the curve. The font size and placement make it hard to distinguish the formula clearly. Additionally, the text box has a dark border that contrasts poorly with the light blue shaded region, further reducing legibility."
+        }
+      ]
+    },
+    {
+      "run_id": "175",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has several readability issues:\n\n1. **Text/labels overlapping**: The legend entries (y = 0, y = 1, y = 2, y = 3) are very close together and partially overlap with the bars, making them difficult to read.\n\n2. **Poor color contrast**: The colors used (purple, orange, grey, pink) are very similar in brightness and saturation, making it hard to distinguish between them, especially for colorblind viewers.\n\n3. **Extreme clutter**: The chart is extremely dense with 30 bars for each of the 4 layers, resulting in severe overlapping of bars and labels. This creates visual clutter that obscures the meaning of the chart.\n\n4. **Overlapping data points**: The bars are so densely packed that they overlap significantly, making it difficult to discern individual bars and their values.\n\nThe combination of these issues makes the chart difficult to read and interpret."
+        }
+      ]
+    },
+    {
+      "run_id": "177",
+      "errors": []
+    },
+    {
+      "run_id": "180",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The title text \"Filled 3D Tricontour Plot Radii: 0.2 to 1.2, Full Circle\" is overlapping and difficult to read clearly. The font size of the axis labels (X, Y, Z) and the colorbar labels appears too small for comfortable reading. The colorbar has a wide range of values with very close spacing, making it hard to distinguish between different levels. The overall visual complexity of the 3D plot with overlapping contour lines and the color gradient makes it challenging to interpret the data accurately."
+        }
+      ]
+    },
+    {
+      "run_id": "181",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "183",
+      "errors": []
+    },
+    {
+      "run_id": "191",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n1. **Text overlap**: Many country codes (e.g., \"FIN\", \"NLD\", \"DEU\") are crammed into small segments, causing labels to overlap or be cut off, especially in densely packed regions.\n2. **Poor color contrast**: The legend uses dark green for both \"Europe\" and \"Africa\", making it hard to distinguish them. Additionally, some labels are in dark colors on similarly dark backgrounds.\n3. **Extreme clutter**: The chart is extremely dense, with numerous small segments and overlapping labels, making it hard to discern individual data points or patterns.\n4. **Inadequate spacing**: The lack of spacing between segments and the small font size make the labels illegible, especially for countries in the inner rings.\n\nThese issues collectively make the chart difficult to interpret."
+        }
+      ]
+    },
+    {
+      "run_id": "195",
+      "errors": []
+    },
+    {
+      "run_id": "196",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The title contains a typo (\"matplotlib\" instead of \"matplotlib\"), and the legend uses blue and orange dots that are difficult to distinguish from the data points in the beeswarm plot. The boxplot colors (light blue and light orange) have poor contrast with the background and with each other, making it hard to differentiate the groups. The data points are somewhat clustered and overlapping, which could make individual points hard to track. The overall visual clutter from the overlapping elements reduces clarity."
+        }
+      ]
+    },
+    {
+      "run_id": "199",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in one key way: the histogram shows 7 bins instead of the required 6 bins. The x-axis ranges from 0 to 60 ms, but the bin edges are 0, 10, 20, 30, 40, 50, 60, which creates 6 intervals (bins). However, the visual representation shows 7 bars, which suggests an error in the binning process. The task explicitly required exactly 6 bins of equal width covering the range 0 to 60 ms, which should result in 6 bars, not 7. This discrepancy indicates that the histogram was not generated correctly according to the specified requirements."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. While the text is not overlapping and the font size appears adequate, the color contrast between the blue bars and the white background is poor, making the bars difficult to distinguish clearly. Additionally, the y-axis labels are not clearly visible due to the dark blue color of the bars, which reduces the overall contrast and readability of the chart."
+        }
+      ]
+    },
+    {
+      "run_id": "200",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The main problem is that the beeswarm plot points are overlapping with the boxplot elements, making it difficult to distinguish individual data points and the boxplot components. The blue dots for Group 1 are scattered within the boxplot area, and the orange dots for Group 2 are similarly overlapped, creating visual clutter. This overlap obscures the meaning of the chart and makes it hard to read the data distribution clearly. Additionally, the legend is present but the overlapping elements make it challenging to associate the colors with the correct data points."
+        }
+      ]
+    },
+    {
+      "run_id": "202",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues, specifically:\n\n1. The x-axis labels \"y1\", \"y2\", \"y3\", \"y4\" are too close together and overlap with the box plot lines, making them difficult to read clearly.\n2. The font size for the labels and titles appears to be too small, especially the x-axis labels, which are cramped and hard to distinguish.\n3. The color contrast is generally good, but the overlapping of the box plots and the x-axis labels creates visual clutter.\n4. The figure is somewhat cluttered due to the close proximity of the labels and the data points, which can make it challenging to interpret the exact values and relationships."
+        }
+      ]
+    },
+    {
+      "run_id": "203",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The main problem is extreme clutter and dense overlapping data points that obscure the meaning of the chart. There are many overlapping circles of various sizes and colors, making it difficult to distinguish individual points, especially in the denser regions of the plot. The overlapping circles create visual confusion and make it hard to interpret the data accurately. While the colors are distinct and the grid is visible, the sheer number of overlapping points makes the chart difficult to read."
+        }
+      ]
+    },
+    {
+      "run_id": "204",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in one key way: the order of the conditions on the x-axis is incorrect. According to the requirements, the conditions should be plotted in the order listed: Baseline, Cat-A, Cat-B, Cat-C, Cat-D. However, the plot shows them in the order: Baseline, Cat-A, Cat-B, Cat-C, Cat-D, which is correct. Wait, that is the correct order. Let me recheck the data.\n\nLooking at the data provided:\n- Baseline: 42.1\n- Cat-A: 55.4\n- Cat-B: 61.8\n- Cat-C: 58.2\n- Cat-D: 49.7\n\nThe plot shows the conditions in the correct order on the x-axis: Baseline, Cat-A, Cat-B, Cat-C, Cat-D. The y-axis starts at 0, the error bars are present with capsize, and the title and labels are correct. The only potential issue is that the y-axis limit is set to max(mean_yields) + 5, which is approximately 66.8, but the plot shows the y-axis going"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The x-axis labels (\"Baseline\", \"Cat-A\", \"Cat-B\", \"Cat-C\", \"Cat-D\") are overlapping with each other, making them difficult to read clearly. The labels are crammed together, especially between \"Cat-A\" and \"Cat-B\", and the text is not spaced adequately to avoid overlap. This clutter reduces the chart's clarity and makes it harder to interpret the data accurately."
+        }
+      ]
+    },
+    {
+      "run_id": "205",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n1. The text \"Hurray!\" is partially cut off and overlaps with the blue box, making it illegible.\n2. The flow values (e.g., \"100\", \"20\") are not clearly associated with their respective phases due to the layout and overlapping arrows.\n3. The colors used for the phases (red, blue, green, orange, purple) are not distinct enough, and the arrows connecting them are faint, making it hard to follow the flow.\n4. The final phase \"Hurray!\" is highlighted in blue, but the text is not bold or clearly emphasized, reducing its visibility.\n5. The overall layout is cluttered, with arrows crossing and overlapping, which obscures the meaning of the chart."
+        }
+      ]
+    },
+    {
+      "run_id": "206",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from the request in one key aspect: the error bars are applied to the parametric curve using `errorbar` with `xerr`, `yerr`, and `zerr`, but the request specifies error bars with a frequency of 20 and limits defined by two boolean conditions. The implementation correctly identifies the indices where `i % 20 == 0` and `(i // 20) % 3 in [0, 2]`, and applies error bars at those points. However, the error bars are shown as 3D error bars (with x, y, and z error), which may not be the intended representation. The request does not specify the type of error bars (e.g., 3D or 2D), but the implementation uses 3D error bars, which is a valid interpretation. The axes are labeled correctly, and the parametric curve is plotted as requested. The plot is saved as `figure.png` and is visible. The only potential difference is the visual representation of the error bars, but this is a reasonable interpretation of the request."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n1. The error bars (red crosses) are densely distributed and overlap significantly with the parametric curve and each other, creating visual clutter that obscures the underlying pattern.\n2. The labels \"X label\", \"Y label\", and \"Z label\" are present but the font size appears small relative to the plot, making them hard to read clearly.\n3. The red error bars have poor contrast against the white background and the blue curve, reducing their visibility.\n4. The overall density of the error bars (appearing at regular intervals) creates a busy appearance that makes it challenging to discern the main parametric curve."
+        }
+      ]
+    },
+    {
+      "run_id": "208",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "209",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The title is incorrect (\"Beeswarm plot and Boxplots, made with matplotliblib\" instead of \"matplotlib\"), and the legend uses blue and orange dots that are not clearly distinguishable from the data points. The beeswarm points are small and densely packed, making individual points hard to distinguish, especially in Group 2. The boxplots are overlaid on the beeswarm plot, but the data points and boxplot lines are not clearly separated, leading to visual clutter. The y-axis label is present, but the overall visual complexity makes it difficult to clearly interpret the data distribution."
+        }
+      ]
+    },
+    {
+      "run_id": "210",
+      "errors": []
+    },
+    {
+      "run_id": "212",
+      "errors": []
+    },
+    {
+      "run_id": "213",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. The text labels for the quartiles (Q1, Median, Q3) and the min/max values are overlapping with the box plot and histogram elements, making them difficult to read. The red dashed lines are continuous across both sections as required, but the text labels are positioned in a way that they partially obscure the data points and bars. The font size appears to be small, and the labels are crowded, which reduces legibility. The overall layout is cluttered, particularly in the top section where the statistical labels are placed."
+        }
+      ]
+    },
+    {
+      "run_id": "214",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure has readability issues. While the 3D waterfall plot is generally clear, there are several problems:\n\n1. The text in the legend is small and may be difficult to read, especially the frequency labels (100 Hz, 200 Hz, etc.) which are not clearly distinguishable at a glance.\n\n2. The y-axis label \"Frequency (Hz)\" is not properly aligned and appears to be cut off or partially obscured by the plot.\n\n3. The grid lines and data lines are somewhat cluttered, making it difficult to distinguish individual frequency lines, especially in the middle of the plot where multiple lines cross.\n\n4. The z-axis label \"Amplitude (a.u.)\" is not clearly visible and appears to be partially obscured by the plot elements.\n\n5. The title \"3D waterfall plot of the frequency time series\" is not properly formatted and appears to be cut off at the top of the plot.\n\nThese issues make the figure difficult to read and interpret accurately."
+        }
+      ]
+    },
+    {
+      "run_id": "216",
+      "errors": []
+    }
+  ]
+}

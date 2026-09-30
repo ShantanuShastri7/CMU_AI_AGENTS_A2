@@ -1,0 +1,711 @@
+{
+  "predictions": [
+    {
+      "run_id": "001",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "004",
+      "errors": []
+    },
+    {
+      "run_id": "008",
+      "errors": []
+    },
+    {
+      "run_id": "009",
+      "errors": []
+    },
+    {
+      "run_id": "010",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "013",
+      "errors": []
+    },
+    {
+      "run_id": "016",
+      "errors": []
+    },
+    {
+      "run_id": "021",
+      "errors": []
+    },
+    {
+      "run_id": "022",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n\nThe right panel (logarithmic scale) uses an orange line with a different marker style (circle) compared to the left panel (linear scale), which uses a blue line with a circle marker. While the data points are the same, the visual representation differs in color and potentially in marker style, which may not be ideal for direct comparison. The task requested the same series to be plotted in both panels, but the different colors and markers could be seen as a deviation from the exact same visual representation. However, the core data and scales are correct."
+        }
+      ]
+    },
+    {
+      "run_id": "023",
+      "errors": []
+    },
+    {
+      "run_id": "025",
+      "errors": []
+    },
+    {
+      "run_id": "026",
+      "errors": []
+    },
+    {
+      "run_id": "028",
+      "errors": []
+    },
+    {
+      "run_id": "029",
+      "errors": []
+    },
+    {
+      "run_id": "030",
+      "errors": []
+    },
+    {
+      "run_id": "031",
+      "errors": []
+    },
+    {
+      "run_id": "034",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read because the rectangles are very small and densely packed, making it hard to distinguish individual values. The lack of axis labels (other than the numbers 0-14) and the small text at the bottom make it challenging to interpret the data. The high density of black and white squares creates visual clutter, and the size differences between rectangles are subtle, making it difficult to perceive the magnitude of values."
+        }
+      ]
+    },
+    {
+      "run_id": "038",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The plot shows total bill amounts by day of the week (Thur, Fri, Sat, Sun) rather than comparing total bill amounts by day of the week as requested. The x-axis shows days of the week, but the plot is not comparing total bill amounts by day of the week as a whole.\n\n2. The plot shows split violins for smokers vs non-smokers, but the split is not clearly visible in the final output. The green and grey colors are used to distinguish smokers and non-smokers, but the split violin effect is not properly implemented.\n\n3. The plot title is \"Total bill by day: smokers vs non-smokers\" instead of the requested title.\n\n4. The legend shows \"Smoker\" and \"Non-smoker\" instead of \"Smokers\" and \"Non-smokers\" as requested.\n\n5. The x-axis label is \"Day of the week\" instead of the requested \"Day of the week\" (though this is minor).\n\n6. The y-axis label is \"Total bill ($)\" which is correct, but the plot shows the total bill amounts by day of the week rather than comparing total bill amounts by"
+        }
+      ]
+    },
+    {
+      "run_id": "039",
+      "errors": []
+    },
+    {
+      "run_id": "046",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The initial flow is not set up with the specified orientation [0, 1], patch label '0', face color red, and rotation 60 degrees. Instead, the initial flow appears to be a single red segment labeled '0' but without the specified rotation.\n\n2. The functions 'branch' and 'turn' are not implemented as described. The script uses a different approach to create the Sankey diagram, with a 'side' function that generates side chains and a 'corner' function that generates corner links, but these do not match the exact specifications provided in the task.\n\n3. The diagram does not have 8 chains on each side created using the 'branch' function. Instead, it appears to have a more complex structure with multiple chains and connections that do not follow the specified sequence.\n\n4. The title is correct, but the overall structure and flow of the diagram do not match the requested intricate flow and connections as specified."
+        }
+      ]
+    },
+    {
+      "run_id": "047",
+      "errors": []
+    },
+    {
+      "run_id": "050",
+      "errors": []
+    },
+    {
+      "run_id": "051",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in several ways:\n\n1. The first panel is titled \"Varying density\" instead of \"Varying Density\" (capitalization difference).\n2. The second streamplot uses the 'jet' colormap, which is explicitly forbidden in the requirements.\n3. The fifth streamplot uses a mask, but the mask is displayed as a gray square rather than using imshow as requested.\n4. The sixth streamplot shows unbroken streamlines, but the plot is not properly labeled as requested.\n5. The figure size and layout do not match the requested 8x10 inches with height ratios 1, 1, 2."
+        }
+      ]
+    },
+    {
+      "run_id": "052",
+      "errors": []
+    },
+    {
+      "run_id": "053",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "055",
+      "errors": []
+    },
+    {
+      "run_id": "059",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The x-axis labels are \"item number 1\", \"item number 2\", etc., instead of the requested \"X values\".\n2. The y-axis label is \"y\" in both panels, but the request only specified labeling the x-axis.\n3. The bars in the second chart have different colors (blue and orange) instead of being uniformly colored based on whether the y value is positive or negative.\n4. The second chart's title is \"Adjusted transparencies for each bar and each edge\" instead of the requested \"Adjusted transparencies for each bar and each edge\" (note: this appears to be a typo in the request, but the title is correct).\n5. The bars in the second chart have different colors (blue and orange) instead of being uniformly colored based on whether the y value is positive or negative.\n6. The bars in the second chart have different colors (blue and orange) instead of being uniformly colored based on whether the y value is positive or negative.\n\nThe main issue is that the bars in the second chart are not colored based on the sign of the y values as requested. The bars should be"
+        }
+      ]
+    },
+    {
+      "run_id": "060",
+      "errors": []
+    },
+    {
+      "run_id": "062",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n- The title of the plot is \"Commute Times by Transport Mode\", but the requested title was not specified, so this is acceptable.\n- The x-axis label is \"Transport Mode\", which is correct.\n- The y-axis label is \"Minutes\", which is correct.\n- The x-tick labels are \"Bus\", \"Bike\", \"Car\", \"Train\", which matches the requested order and labels.\n- The violins are at positions 1, 2, 3, 4 as requested.\n- The `showmedians=True` parameter was used, and the medians are visible as lines within the violins.\n- The median markers (red circles) are plotted on top of the violins at the correct positions and values.\n- The plot is vertical, as requested.\n\nHowever, the plot does not show the minimum and maximum values as bars (extrema bars) as requested in requirement 2. The default extrema bars are not visible in the plot. The plot only shows the median and the interquartile range, but not the full range of the data (min and max). This is a deviation from the requested requirements."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read because the red circular markers representing the medians are partially obscured by the violin plots, making it hard to clearly see their exact positions. Additionally, the vertical lines extending from the violins (showing min/max) overlap with the markers, further reducing clarity. The combination of overlapping elements and the small size of the markers makes it challenging to accurately interpret the median values for each transport mode."
+        }
+      ]
+    },
+    {
+      "run_id": "065",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "068",
+      "errors": []
+    },
+    {
+      "run_id": "069",
+      "errors": []
+    },
+    {
+      "run_id": "070",
+      "errors": []
+    },
+    {
+      "run_id": "074",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n\n- The task requested two plots on the same axes with different left and right scales, using `data1 = np.exp(t)` and `data2 = np.sin(2 * np.pi * t)`.\n- The plot shows the correct data: `exp(t)` on the left y-axis and `sin(2πt)` on the right y-axis.\n- However, the plot title is \"Dual Y-Axis Plot\" instead of the expected \"Dual Y-Axis Plot\" (which is correct), but the y-axis labels are labeled as \"exp(t)\" and \"sin(2πt)\" which is correct.\n- The issue is that the plot shows the `exp(t)` data as a green line and `sin(2πt)` as a blue line, which is correct, but the legend shows \"exp(t)\" and \"sin(2πt)\" which is correct.\n- The plot is correct in terms of data and scales, but the title is not \"Dual Y-Axis Plot\" as expected, but it is.\n\nWait, the title is \"Dual Y-Axis Plot\" which is correct. The plot is correct.\n\nActually"
+        }
+      ]
+    },
+    {
+      "run_id": "075",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The first subplot shows three curves (g(s), g(s+0.1), g(s+0.2)) as requested, but the x-axis range is from 0 to 3, not 0 to 5 as implied by the original request (though this is a minor difference in the range).\n\n2. The second subplot is a 3D surface plot as requested, but the function E is defined as cos(sqrt(P^2 + Q^2)) as required, however the plot shows a different color scheme and the axes are labeled P and Q as requested.\n\n3. The suptitle is correctly set to \"A Story of 2 Subplots\" as requested.\n\n4. The first subplot has a legend and grid as required.\n\n5. The figure is saved as \"figure.png\" as required.\n\nThe main difference is that the first subplot's x-axis range is 0-3 instead of 0-5, but this is a minor difference in the range. The overall structure and content of the figure match the request."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read because the text elements (axis labels, legend, and title) are too small and compressed, making them hard to decipher. The 3D plot's colorbar is also difficult to interpret due to the small size and lack of clear labeling. The overall layout appears cramped, with the subplots taking up most of the space, leaving little room for clear text presentation."
+        }
+      ]
+    },
+    {
+      "run_id": "077",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1.  The legend labels are incorrect. The plot shows \"Oroville\" and \"Shasta\" as the labels, but the legend in the image shows \"Oroville\" and \"Shasta\" as the labels, which is correct. However, the line for Shasta is orange, and the line for Oroville is blue. The legend has the blue line labeled \"Oroville\" and the orange line labeled \"Shasta\", which is correct. The issue is that the legend has an extra entry for \"Peak\" which is not requested.\n\n2.  The peak annotation is incorrect. The annotation reads \"Peak: 3452.7 TAF (week 17)\", but the peak value for Oroville is 3452.7 TAF in week 17, which is correct. However, the peak point is marked with a red dot, but the annotation is placed at the wrong location. The annotation is placed at (17, 3452.7), but the red dot is placed at (17, 3452.7), which is correct. The annotation"
+        }
+      ]
+    },
+    {
+      "run_id": "079",
+      "errors": []
+    },
+    {
+      "run_id": "080",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data does not display the checkout count above each bar as required. The chart shows the bars and labels correctly, but the counts (e.g., 4128, 3907) are not printed on top of the bars. This is a deviation from the requested requirements."
+        }
+      ]
+    },
+    {
+      "run_id": "081",
+      "errors": []
+    },
+    {
+      "run_id": "082",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in one key way: the order of the services on the x-axis is incorrect. The task specifies that the services should be plotted in the order given: auth, catalog, search, checkout. However, the plot shows them in the order: auth, catalog, search, checkout — which is actually correct. Wait, let me recheck.\n\nActually, the plot shows the services in the order: auth, catalog, search, checkout, which matches the requested order. The median lines are correctly positioned, outliers are shown, and the axes are labeled properly. The title is also correct. The only potential issue is the deprecation warning about the `labels` parameter, but the script was updated to use `tick_labels`, so this is no longer an issue.\n\nTherefore, the plotted data does not differ from what was requested. The answer should be NO.\n\nWait, I need to recheck the order. The plot shows \"auth\", \"catalog\", \"search\", \"checkout\" from left to right, which matches the requested order. The median lines are at the correct positions (e.g., auth median is around 97, which is the median of 82, 91"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to the extreme scale difference on the y-axis (0 to 300 ms). The outliers in \"auth\" (240 ms) and \"checkout\" (300 ms) are so far above the main data clusters that they dominate the plot's vertical space, causing the boxes for \"catalog\" and \"search\" to be compressed near the bottom. This makes it hard to compare the distributions of the services effectively, especially since the median lines and quartiles for \"catalog\" and \"search\" are barely distinguishable. The y-axis scale is not appropriate for the data, making the plot misleading and difficult to interpret."
+        }
+      ]
+    },
+    {
+      "run_id": "083",
+      "errors": []
+    },
+    {
+      "run_id": "086",
+      "errors": []
+    },
+    {
+      "run_id": "087",
+      "errors": []
+    },
+    {
+      "run_id": "089",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "090",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in one key way: the title of the chart is \"Commute Times by Mode of Transport\" instead of the requested title. The request specified that the chart should have a title, but did not specify the exact title text. However, the generated title is a reasonable interpretation of the request. \n\nAll other requirements are met:\n- The plot shows a vertical violin plot with one violin per mode at positions 1, 2, 3, 4 in the correct order (Bus, Bike, Car, Train)\n- The showmedians=True parameter was used, and the default extrema bars (min/max) are visible\n- Each group's median is plotted as a red circular marker at the correct position\n- The y-axis is labeled \"Minutes\" as required\n- The x-axis has the correct labels (Bus, Bike, Car, Train)\n\nThe only difference is the title text, which is a minor deviation from the unspecified requirement."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read because the red circular markers representing the medians are not clearly visible against the light blue violin plots. The markers are small and the contrast between the red color and the light blue background is low, making it hard to distinguish the median points. Additionally, the vertical lines showing the min/max values are very thin and may be hard to see clearly. The overall visual clutter makes it challenging to quickly interpret the median values for each transport mode."
+        }
+      ]
+    },
+    {
+      "run_id": "091",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The subplot titles are incorrect. The request specified the titles should be 'center', 'zero', 'axes', and 'data', but the actual plot shows 'center', 'zero', 'axes', and 'data' in the wrong positions. The 'center' subplot is in the top-left, 'zero' in the top-right, 'axes' in the bottom-left, and 'data' in the bottom-right, which is correct, but the titles are not properly aligned with the spine positioning requirements.\n\n2. The spine positioning is not correctly implemented. The request specified that in the 'center' subplot, the left and bottom spines should be positioned at the center, but in the actual plot, the spines are at the edges of the plot area.\n\n3. The 'axes' subplot should have the left spine at 0.3 on the axes and the bottom spine at 0.3 on the axes, but in the actual plot, the spines are at the edges of the plot area.\n\n4. The 'data' subplot should have the left spine at 2 on the data and the bottom spine at 2 on the data"
+        }
+      ]
+    },
+    {
+      "run_id": "096",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "097",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from the request in one key aspect: the colorbar label is incorrect. The colorbar is labeled \"f(x, y) = sin(x) * cos(y)\" which is correct, but the label text in the colorbar itself is shown as \"f(x, y) = sin(x) * cos(y)\" which is redundant and not the intended label. The colorbar should only have the label \"f(x, y) = sin(x) * cos(y)\" without the equation repeated in the colorbar title. However, upon closer inspection, the colorbar label appears to be correctly set as \"f(x, y) = sin(x) * cos(y)\" and the plot meets all other requirements. The only potential issue is the annotation text, which is correctly placed and labeled. The plot satisfies all requirements. \n\nWait, rechecking the requirements: the colorbar should be labeled, and it is. The annotation is correctly placed. The levels are correct. The colormap is perceptually uniform (viridis). The region is correct. The title and axes are labeled. The maximum point is marked. The only possible issue is the colorbar label, but it appears correct. The plot is correct."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n\n1.  **Overlapping Text and Annotation:** The text annotation \"Max: 1.000\" is placed directly over the red marker and the bright yellow region, making it hard to distinguish the text from the background colors. The arrow points to the marker, but the text box is partially obscured by the high-value contour.\n\n2.  **Poor Contrast in Annotation:** The annotation box has a white background, which is fine, but the text is black. In the bright yellow region, the contrast between black text and the yellow background is low, making the text hard to read.\n\n3.  **Inadequate Annotation Placement:** The annotation is placed very close to the marker, which is in a high-value area. This makes the text difficult to read against the bright colors. A better placement would be in a region of lower contrast, such as the center of a darker contour.\n\n4.  **Colorbar Label Clarity:** The colorbar label \"f(x, y) = sin(x) * cos(y)\" is long and wraps, which can be slightly distracting. While readable, it's not ideal.\n\n5.  **Color Palette:** While"
+        }
+      ]
+    },
+    {
+      "run_id": "098",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read because the two datasets have vastly different scales. The exponential data (Data 1) grows rapidly and dominates the plot, while the sine wave (Data 2) is nearly flat and almost invisible on the same scale. This makes it impossible to discern the oscillatory behavior of Data 2. The plot should use dual y-axes to properly display both datasets."
+        }
+      ]
+    },
+    {
+      "run_id": "099",
+      "errors": []
+    },
+    {
+      "run_id": "103",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "104",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n1. The annotation text reads \"Peak: 412 visits\" but the point it points to is not exactly at (3.0, 412.0) as required. The annotation is placed at (3.0, 430.0) in data coordinates, which is correct, but the arrow points to a point that appears to be slightly off the actual data point for Thursday (which is at x=3, y=412).\n2. The y-axis does not start exactly at zero; it starts at 0 but the scale is not clearly visible, and the annotation is placed at y=430.0, which is above the peak value of 412.\n3. The annotation text is placed at (3.0, 430.0), which is within the allowed tolerance (0.6 in x and 35 in y), but the arrow points to a point that is not exactly at the data point for Thursday.\n4. The chart title and axis labels are present, but the y-axis label is \"Number of Visits\" instead of \"Number of Vis"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read because the text annotation \"Peak: 412 visits\" is placed at (3.0, 430.0) in data coordinates, which is above the actual data point for Thursday (3, 412). The annotation is positioned too high and slightly to the right, making it visually disconnected from the peak point. Additionally, the arrow points to the text rather than the data point, and the text itself is not clearly linked to the peak, reducing clarity. The y-axis scale also makes the peak less prominent."
+        }
+      ]
+    },
+    {
+      "run_id": "105",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The x-axis label is \"Four separate samples\" in both plots, but the requested label was \"Four separate samples\" (this is correct).\n2. The y-axis label is \"Measured values\" in both plots, which matches the request.\n3. The titles are \"Standard box plot\" and \"Notched box plot\", which matches the request.\n4. The data sets are labeled as 'y1', 'y2', 'y3', and 'y4', which matches the request.\n5. The colors are orange for 'y1', purple for 'y2', yellow for 'y3', and cyan for 'y4', which matches the request.\n6. The plots are arranged in one row and two columns, with the standard box plot on the left and the notched box plot on the right, which matches the request.\n7. Both plots have horizontal grid lines, which matches the request.\n\nHowever, the box plots are not vertically aligned in the sense that the boxes for each data set are not aligned vertically between the two plots. The boxes for 'y1', 'y2', 'y3', and 'y4"
+        }
+      ]
+    },
+    {
+      "run_id": "106",
+      "errors": []
+    },
+    {
+      "run_id": "108",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n\nThe overall title of the figure is \"Seasonal Temperature Comparison Across Cities\", which does not contain the word \"temperature\" as required. The task specifically requested that the overall title (suptitle) must contain the word \"temperature\". While the individual panel titles and axis labels are correct, the main title fails to meet this requirement."
+        }
+      ]
+    },
+    {
+      "run_id": "111",
+      "errors": []
+    },
+    {
+      "run_id": "112",
+      "errors": []
+    },
+    {
+      "run_id": "115",
+      "errors": []
+    },
+    {
+      "run_id": "117",
+      "errors": []
+    },
+    {
+      "run_id": "124",
+      "errors": []
+    },
+    {
+      "run_id": "125",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in one way: the y-axis does not start at 0. The chart shows the y-axis starting at approximately 1800, which violates the requirement that the y-axis must start at 0. The other requirements (order of bars, x-tick labels, bar labels, title, and axis labels) are met."
+        }
+      ]
+    },
+    {
+      "run_id": "126",
+      "errors": []
+    },
+    {
+      "run_id": "128",
+      "errors": []
+    },
+    {
+      "run_id": "129",
+      "errors": []
+    },
+    {
+      "run_id": "130",
+      "errors": []
+    },
+    {
+      "run_id": "131",
+      "errors": []
+    },
+    {
+      "run_id": "135",
+      "errors": []
+    },
+    {
+      "run_id": "136",
+      "errors": []
+    },
+    {
+      "run_id": "141",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The chart is a horizontal stacked bar chart, which matches the request.\n2. The title \"Favorite Sports by Country\" is correctly used.\n3. The data appears to be correctly plotted with countries on the y-axis and sports on the x-axis.\n4. The colors are from the RdYlGn colormap, as requested.\n\nHowever, the chart does not label each stacked bar with their respective data values, which was explicitly requested in the task. The values are not visible on the bars, making it difficult to read the exact number of responses for each sport in each country. This is a significant omission from the requirements."
+        }
+      ]
+    },
+    {
+      "run_id": "142",
+      "errors": []
+    },
+    {
+      "run_id": "143",
+      "errors": []
+    },
+    {
+      "run_id": "145",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "146",
+      "errors": []
+    },
+    {
+      "run_id": "150",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n\n1. The z-axis label is \"Probability (Gaussian)\" instead of just \"Probability\" as implied by the task.\n2. The y-axis label is \"Y-axis (2 to 10)\" instead of just \"Y-axis\" as requested.\n3. The x-axis label is \"X-axis (0 to 20)\" instead of just \"X-axis\" as requested.\n4. The plot title is \"3D Plot with Gaussian Distributions and Polygons\" instead of a more general title as requested.\n5. The polygons are not clearly visible as filled areas under the lines; they appear as surface plots that blend with the lines.\n6. The z-axis limit is set to 0.08, but the actual maximum probability value is around 0.1, so the z-axis limit should be adjusted to 0.1 or higher to fully display the peaks.\n7. The y-axis range is from 2 to 10, but the plot shows y-values from 2 to 10, which is correct, but the label is not properly formatted.\n8. The x-axis range is from 0 to 2"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n1. The 3D plot has overlapping lines and polygons that create visual clutter, making it hard to distinguish individual curves.\n2. The legend is partially obscured and difficult to read, especially for the higher y-values.\n3. The z-axis label is cut off and partially unreadable (\"Probability (Gaussian)\" is truncated).\n4. The grid lines and the 3D perspective make it challenging to interpret the exact values and relationships between the curves.\n5. The color mapping, while using a reversed plasma colormap, doesn't provide sufficient contrast for all the curves, especially in the overlapping regions."
+        }
+      ]
+    },
+    {
+      "run_id": "153",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in one key way: the title of the chart is \"Exam Score vs Hours Studied\" instead of the requested \"Exam Score against Hours Studied\". The rest of the requirements (scatter plot, single call to `Axes.scatter`, correct axes labels, correct data points, single set of axes) are met."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read because the y-axis labels are not clearly visible. The tick marks and labels on the y-axis are too close together and the numbers are small, making it hard to accurately determine the exact exam scores for each data point. Additionally, the y-axis label \"Exam Score\" is partially cut off at the top of the plot."
+        }
+      ]
+    },
+    {
+      "run_id": "155",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in several ways:\n\n1. The first plot is labeled \"Mobius strip\" but the requested function was not specified to create a Mobius strip. The function used appears to be a parametric surface that creates a Mobius-like shape, but this is not what was requested.\n\n2. The second plot is labeled \"Masked polar surface\" but the requested function was not specified to create this specific surface. The function used appears to be a polar surface with a mask, but the specific formula was not provided in the request.\n\n3. The colormaps used are not exactly as requested. The first plot uses a colormap that ranges from dark blue to light yellow, but the actual colormap used is not specified in the request. The second plot uses a colormap that ranges from dark red to light blue, but the actual colormap used is not specified in the request.\n\n4. The z limits of the first plot are set to -2 and 2, but the actual z limits of the first plot are not specified in the request.\n\n5. The figure size is 12 by 5 inches, but the actual figure size is not specified in the request.\n\n6. The figure has a su"
+        }
+      ]
+    },
+    {
+      "run_id": "156",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n\nThe y-axis does not start at 0 as required. The y-axis in the chart starts at approximately 38,000, which violates the requirement that \"The y axis must start at 0.\" The chart also does not show a grid, which is another requirement. The title, axis labels, and legend are present, but the y-axis scale is incorrect."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read because the x-axis labels are too close together, causing them to overlap and become illegible. The date labels are compressed, making it hard to distinguish individual months, especially in the earlier part of the timeline. While the overall trend is visible, the lack of clear labeling on the x-axis significantly impairs readability."
+        }
+      ]
+    },
+    {
+      "run_id": "161",
+      "errors": []
+    },
+    {
+      "run_id": "163",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n\n1. The marker and annotation for the maximum value of f(x, y) are incorrect. The code uses `np.argmax(Z)` and `np.argmin(Z)` to find the indices of the maximum and minimum values, but this is flawed. `np.argmax(Z)` returns the index of the maximum value in the flattened array, which corresponds to a single index, not a (row, col) pair. The code incorrectly uses this index as the x-coordinate and `np.argmin(Z)` (which finds the minimum, not the maximum) as the y-coordinate. This results in a marker placed at an incorrect location, not the actual grid point where f(x, y) is largest.\n\n2. The text annotation is also incorrect. It points to the wrong location and uses the wrong label (\"Max Potential\") for the point that is actually the minimum.\n\n3. The colorbar label is \"Potential\", which is not specified in the requirements. The requirements only specify labeling the colorbar, but do not specify the label text. However, the label \"Potential\" is not incorrect per se, but it's not the only possible label. The main issue is the"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to several issues:\n\n1. The colorbar label \"Potential\" is rotated 90 degrees and appears to be cut off or misaligned, making it hard to read.\n2. The text annotation \"Max Potential\" is placed at an incorrect location (based on the code's use of np.argmax(Z) and np.argmin(Z), which are indices, not coordinates), and the arrow points to an incorrect point.\n3. The marker for the maximum value is placed at the wrong location (using np.argmax(Z) and np.argmin(Z) on the 2D array Z, which returns indices, not the actual (x,y) coordinates).\n4. The title and axis labels are present but the overall visualization is confusing due to the incorrect annotation placement and potential mislabeling.\n\nThese issues make the figure difficult to interpret correctly."
+        }
+      ]
+    },
+    {
+      "run_id": "164",
+      "errors": []
+    },
+    {
+      "run_id": "165",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in one key way: the title of the chart is \"Mean Yield of Reaction Conditions with Standard Error of the Mean\" instead of the requested title which should have been \"Mean Yield of Reaction Conditions with Standard Error of the Mean\" (the same, but the actual title in the plot appears to be slightly different in wording or formatting). However, upon closer inspection, the title seems to match the requested one. \n\nWait, let me recheck the requirements. The user requested a title, and the plot has a title. The title appears to be correct. The only potential difference is that the y-axis starts at 0, which is required, and the plot shows the correct data points, error bars, and labels. The conditions are correctly placed on the x-axis with the proper labels. The error bars have end caps (capsize > 0), and there are no connecting lines. The y-axis starts at 0. \n\nActually, the plot looks correct. The title is \"Mean Yield of Reaction Conditions with Standard Error of the Mean\", which matches the requirement. The y-axis is labeled \"Mean Yield (%)\", which is correct. The x-axis has the correct labels. The error"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read because the y-axis scale is too large, making the data points appear compressed near the bottom of the plot. The y-axis ranges from 0 to 60, but the data points are clustered between approximately 42 and 62, which means most of the plot area is empty. This makes it hard to see the differences between the conditions clearly. Additionally, the error bars are not clearly visible due to the scale. A better approach would be to set the y-axis limits more appropriately to focus on the range of the data (e.g., 35 to 65) to improve readability."
+        }
+      ]
+    },
+    {
+      "run_id": "166",
+      "errors": []
+    },
+    {
+      "run_id": "167",
+      "errors": []
+    },
+    {
+      "run_id": "168",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "169",
+      "errors": []
+    },
+    {
+      "run_id": "170",
+      "errors": []
+    },
+    {
+      "run_id": "171",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "173",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following way:\n\nThe integral formula text is displayed in a box with a gray background and black border, which was not explicitly requested. The request only specified the text content and its position, but not the styling of the text box. Additionally, the text appears to be slightly misaligned and partially overlapping the curve, which may affect readability. However, the core elements (equation, shaded region, axis labels, etc.) are present and meet the requirements."
+        }
+      ]
+    },
+    {
+      "run_id": "175",
+      "errors": []
+    },
+    {
+      "run_id": "177",
+      "errors": []
+    },
+    {
+      "run_id": "180",
+      "errors": []
+    },
+    {
+      "run_id": "181",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "183",
+      "errors": []
+    },
+    {
+      "run_id": "191",
+      "errors": []
+    },
+    {
+      "run_id": "195",
+      "errors": []
+    },
+    {
+      "run_id": "196",
+      "errors": []
+    },
+    {
+      "run_id": "199",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in one key way: the histogram uses 6 bins of equal width covering the range 0 to 60 ms, but the bin edges are not explicitly set to 0, 10, 20, 30, 40, 50, 60. While the `bins=6` and `range=(0, 60)` parameters should theoretically create these bins, the actual bin edges in the plot may not align perfectly with these values due to floating-point precision or matplotlib's internal binning algorithm. However, the visual representation appears to match the requested specifications closely, with the x-axis ranging from 0 to 60 and the y-axis showing raw counts. The title and axis labels are correctly applied. The primary difference is the potential slight misalignment of bin edges, which could affect the exact count distribution."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read because the bars are too wide and the x-axis labels are not clearly visible. The bin edges are at 0, 10, 20, 30, 40, 50, 60, but the labels on the x-axis are not properly aligned with these edges, making it hard to interpret the data accurately. Additionally, the y-axis labels are not clearly visible, and the overall resolution of the image is low, which further reduces readability."
+        }
+      ]
+    },
+    {
+      "run_id": "200",
+      "errors": []
+    },
+    {
+      "run_id": "202",
+      "errors": []
+    },
+    {
+      "run_id": "203",
+      "errors": []
+    },
+    {
+      "run_id": "204",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in one key way: the order of the conditions on the x-axis is incorrect. The conditions should be in the order listed (Baseline, Cat-A, Cat-B, Cat-C, Cat-D), but in the plot, the order appears to be Baseline, Cat-A, Cat-B, Cat-C, Cat-D, which is correct. However, looking at the y-values, the mean yield for Cat-C is shown as approximately 50%, but the data shows it should be 58.2%. The plot shows Cat-C at a lower value than Cat-A, which is incorrect based on the data provided. The y-axis also does not start at 0, which violates requirement 4. The plot shows the y-axis starting at 0, but the data points are not correctly positioned relative to the y-axis scale. The error bars are present with end caps, and the title and labels are correct. The main issue is the incorrect positioning of the data points and the y-axis scale."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read because the x-axis labels are cut off at the bottom of the plot. The labels \"Baseline\", \"Cat-A\", \"Cat-B\", \"Cat-C\", and \"Cat-D\" are partially obscured by the edge of the plot area, making them hard to read clearly. This is a common issue when the figure size is not properly adjusted to accommodate the text labels."
+        }
+      ]
+    },
+    {
+      "run_id": "205",
+      "errors": []
+    },
+    {
+      "run_id": "206",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from the request in one key aspect: the error bars are applied to the parametric curve using `ax.errorbar`, which adds error bars at specific points along the curve. However, the request specifies that error bars should be added with a frequency of 20 and based on two boolean conditions: `index % 20 == 0` and `(index // 20) % 3 in [0, 2]`. The implementation correctly identifies these indices, but the error bars are plotted as 3D error bars (with `xerr`, `yerr`, `zerr`), which may not be the intended visual representation. The request does not specify the type of error bars (e.g., 3D or 2D), but the use of `errorbar` with all three error components might be overkill or misaligned with expectations. Additionally, the error bars are shown as red crosses, which is acceptable, but the request does not specify color or style, so this is not a deviation. The main difference is the interpretation of how error bars should be visualized in 3D space."
+        }
+      ]
+    },
+    {
+      "run_id": "208",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "209",
+      "errors": []
+    },
+    {
+      "run_id": "210",
+      "errors": []
+    },
+    {
+      "run_id": "212",
+      "errors": []
+    },
+    {
+      "run_id": "213",
+      "errors": []
+    },
+    {
+      "run_id": "214",
+      "errors": []
+    },
+    {
+      "run_id": "216",
+      "errors": []
+    }
+  ]
+}
