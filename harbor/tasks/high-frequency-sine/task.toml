@@ -1,0 +1,42 @@
+schema_version = "1.4"
+
+artifacts = [
+  "/app/figure.png",
+  "/app/plot.py",
+  "/app/plotted_values.json",
+]
+
+[task]
+name = "cmu-11768/high-frequency-sine"
+version = "1.0.0"
+description = "Plot a high-frequency trigonometric wave."
+keywords = ["visualization", "matplotlib"]
+
+[[task.authors]]
+name = "Student Name"
+
+[metadata]
+task_class = "dense-data-validation"
+chart_family = "line"
+source = "tasks/high-frequency-sine/task.json"
+
+[verifier]
+timeout_sec = 600.0
+
+[verifier.env]
+
+[agent]
+timeout_sec = 900.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 900.0
+os = "linux"
+cpus = 1
+memory_mb = 2048
+mcp_servers = []
+
+[environment.env]
+MPLBACKEND = "Agg"
+
+[solution.env]

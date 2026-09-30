@@ -87,3 +87,19 @@ False Negative Case (run_id="023", wrong_chart):
 - Ground Truth: The run has a `wrong_chart` error because the instructions asked for circular markers on the data points and a 2x1 grid, but the agent produced no markers and 2 individual panels instead.
 - Prediction: The validator predicted no errors.
 - Cause & Missing Feature: The vision-language model struggles with fine-grained spatial and visual attention (noticing the absence of circular markers or the exact sub-panel layout). This implies our validator is missing an approach that forces it to systematically check off constraints (like checking the exact marker shape and grid layout independently rather than evaluating the image globally at once).
+
+
+
+================================================================================
+PART 3 ANALYSIS: DESIGN NEW EVALUATION TASKS
+================================================================================
+
+
+uv run python -m workflow score \
+  --predictions output/pre_iteration_authored_predictions.json
+execution_failure    MCC=1.0000  TP=3 TN=12 FP=0 FN=0  support(+/-)=3/12
+wrong_data           MCC=0.0000  TP=0 TN=6 FP=6 FN=0  support(+/-)=0/12
+                     WARNING: insufficient ground-truth support; MCC reported as 0 by convention
+wrong_chart          MCC=-0.1581  TP=1 TN=3 FP=7 FN=1  support(+/-)=2/10
+hard_to_read         MCC=0.2000  TP=2 TN=2 FP=8 FN=0  support(+/-)=2/10
+macro_mcc            0.2605

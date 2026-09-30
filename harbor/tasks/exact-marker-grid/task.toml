@@ -1,0 +1,42 @@
+schema_version = "1.4"
+
+artifacts = [
+  "/app/figure.png",
+  "/app/plot.py",
+  "/app/plotted_values.json",
+]
+
+[task]
+name = "cmu-11768/exact-marker-grid"
+version = "1.0.0"
+description = "Create a 2x2 grid of subplots with exact markers."
+keywords = ["visualization", "matplotlib"]
+
+[[task.authors]]
+name = "Student Name"
+
+[metadata]
+task_class = "specific-formatting-constraints"
+chart_family = "scatter"
+source = "tasks/exact-marker-grid/task.json"
+
+[verifier]
+timeout_sec = 600.0
+
+[verifier.env]
+
+[agent]
+timeout_sec = 900.0
+
+[environment]
+network_mode = "public"
+build_timeout_sec = 900.0
+os = "linux"
+cpus = 1
+memory_mb = 2048
+mcp_servers = []
+
+[environment.env]
+MPLBACKEND = "Agg"
+
+[solution.env]
