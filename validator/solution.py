@@ -106,7 +106,8 @@ def _ask(run: Run, family: ErrorFamily, question: str) -> list[Error]:
     inputs = "\n".join(
         f"{name}:\n{path.read_text(errors='replace')}" for name, path in run.inputs.items()
     )
-    trajectory = str(run.messages)
+    # TRUNCATION: Only send the final ~2500 characters to isolate the final code and avoid confusion from early mistakes
+    trajectory = str(run.messages)[-2500:]
     image_bytes = run.figure.read_bytes() if run.figure else None
 
     def make_prompt(shown_trajectory: str, shown_inputs: str) -> str:
@@ -171,6 +172,26 @@ def judge_execution(run: Run) -> list[Error]:
     If no figure was produced or it cannot be decoded as an image, report execution_failure.
     If a valid figure was saved, rule out execution_failure and allow downstream checks.
     """
+    trajectory_text = str(run.messages)
+
+    # 1. Traceback check
+    if "Traceback (most recent call last):" in trajectory_text or "SyntaxError:" in trajectory_text:
+        return [
+            Error(
+                family=ErrorFamily.EXECUTION_FAILURE,
+                evidence="Agent trajectory contains a Python crash traceback.",
+            )
+        ]
+
+    # 2. Plotting library check
+    if not any(lib in trajectory_text for lib in ["matplotlib", "seaborn", "plotly", "plt"]):
+        return [
+            Error(
+                family=ErrorFamily.EXECUTION_FAILURE,
+                evidence="No plotting library was imported or used by the agent.",
+            )
+        ]
+
     if run.figure is None or not run.figure.is_file():
         return [
             Error(
@@ -182,14 +203,27 @@ def judge_execution(run: Run) -> list[Error]:
     try:
         with Image.open(run.figure) as img:
             img.verify()
-        # Also check file non-empty
-        if run.figure.stat().st_size == 0:
+
+        # 3. File size check (too small to be a real plot)
+        if run.figure.stat().st_size < 2000:
             return [
                 Error(
                     family=ErrorFamily.EXECUTION_FAILURE,
-                    evidence="The produced figure.png is an empty file (0 bytes).",
+                    evidence="Figure is essentially blank (file size too small).",
                 )
             ]
+
+        # 4. Solid block of color check
+        with Image.open(run.figure) as img:
+            extrema = img.convert("L").getextrema()
+            if extrema is not None and extrema[0] == extrema[1]:
+                return [
+                    Error(
+                        family=ErrorFamily.EXECUTION_FAILURE,
+                        evidence="Figure is a solid block of color with no axes or data.",
+                    )
+                ]
+
     except Exception as exc:
         return [
             Error(
@@ -231,7 +265,8 @@ def judge_readability(run: Run) -> list[Error]:
         "2. Fonts that are far too small to read comfortably.\n"
         "3. Poor color contrast between text/data and the background.\n"
         "4. Extreme clutter or dense overlapping data points that obscure the meaning of the chart.\n"
-        "Answer YES if ANY of these readability issues are present.",
+        "IMPORTANT: Do not penalize minor aesthetic clutter. Only answer YES if the clutter is catastrophic and a human would find it physically impossible to extract data from the chart.\n"
+        "Answer YES if ANY of these catastrophic readability issues are present.",
     )
 
 

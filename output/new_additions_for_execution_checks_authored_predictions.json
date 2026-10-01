@@ -1,0 +1,149 @@
+{
+  "predictions": [
+    {
+      "run_id": "dense-scatter-overlap__glm",
+      "errors": []
+    },
+    {
+      "run_id": "dense-scatter-overlap__ministral",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The figure is difficult to read due to extreme clutter and dense overlapping data points. With 10,000 points (5,000 in each class) plotted with low alpha (0.1), the overlapping points create a \"blob\" effect, especially in the center where both classes overlap. This makes it physically impossible for a human to extract meaningful data or distinguish individual points, obscuring the chart's purpose. While the labels and title are legible, the data visualization itself is catastrophically cluttered."
+        }
+      ]
+    },
+    {
+      "run_id": "dense-scatter-overlap__qwen",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "exact-marker-grid__glm",
+      "errors": []
+    },
+    {
+      "run_id": "exact-marker-grid__ministral",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is impossible to read due to catastrophic clutter and overlapping elements. Each subplot contains a single data point (the same three points plotted in all subplots), but the markers are extremely large (size 100) and extend far beyond the plot area, overlapping with the axes, labels, and other plot elements. The markers in each subplot are so large that they dominate the entire plot, making it impossible to discern the actual data points or the coordinate system. The text labels (e.g., \"Subplot 1\", \"Subplot 2\") are partially obscured, and the axes are cluttered with oversized markers. This extreme visual clutter renders the chart meaningless and prevents any human from extracting data."
+        }
+      ]
+    },
+    {
+      "run_id": "exact-marker-grid__qwen",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "The agent failed to produce or save a figure.png file in the run directory."
+        }
+      ]
+    },
+    {
+      "run_id": "high-frequency-sine__glm",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data does not differ from what was requested. The graph shows the function y = sin(100 * x) + cos(150 * x) for 10000 evenly spaced x values between 0 and 10, with a black solid line of width 0.5, x-axis limits from 0 to 10, and the title 'High Frequency Waves'. The file is saved as figure.png, and the image is valid. All requirements are met."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The chart is impossible to read due to extreme clutter. The high-frequency oscillations of the function y = sin(100 * x) + cos(150 * x) result in a dense, nearly solid-looking band of vertical lines across the plot. With 10,000 data points over the interval [0, 10], the lines are so closely spaced that they merge into a continuous, indistinct pattern, making it physically impossible for a human to extract any meaningful data or discern individual waveforms. The visual information is completely obscured by the density of the lines, rendering the chart illegible."
+        }
+      ]
+    },
+    {
+      "run_id": "high-frequency-sine__ministral",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested. While the title, x-axis limits, and file save are correct, the plot shows a high-frequency oscillation that appears to be a vertical line pattern rather than the smooth sine and cosine waves expected from the function y = sin(100 * x) + cos(150 * x). This suggests a plotting error, possibly due to incorrect data generation or plotting parameters, resulting in a visually incorrect representation of the intended function."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The chart is impossible to read due to extreme clutter. The high-frequency oscillations of the function y = sin(100 * x) + cos(150 * x) result in an overwhelming number of dense, overlapping vertical lines that completely obscure the data. The black solid line with width 0.5 is rendered as a nearly solid black band across the entire plot, making it physically impossible for a human to extract any meaningful information or distinguish individual data points. The visual noise is catastrophic, rendering the chart illegible."
+        }
+      ]
+    },
+    {
+      "run_id": "high-frequency-sine__qwen",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data appears to be a high-frequency oscillation, but the visual representation shows a dense, almost solid band of lines rather than a smooth black solid line as requested. This suggests that the plotting may have been affected by the high frequency of the function, leading to a display that looks like a filled or overly dense pattern instead of a clear line. The line width of 0.5 and the black color are likely not visually distinct due to the extreme number of oscillations, making the plot look different from what was expected. Additionally, the y-axis limits seem to be correctly set, but the visual clarity is compromised."
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The chart is impossible to read due to extreme clutter. The high-frequency oscillations of the function y = sin(100 * x) + cos(150 * x) result in a dense, nearly solid black band across the plot, making it physically impossible to distinguish individual data points or trends. The line width of 0.5 is too thin to be visible against the overwhelming number of overlapping vertical lines, and the result is a visually indistinct mass that obscures the meaning of the chart."
+        }
+      ]
+    },
+    {
+      "run_id": "strict-formatting-colors__glm",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The chart is difficult to read due to poor color contrast between the text (labels and title) and the background. The title \"RGB Bars\" and the x-axis labels (\"A\", \"B\", \"C\") are in black text on a white background, which appears to be fine at first glance. However, the bars themselves are very bright and saturated colors (especially the green bar), which can cause visual strain and make the black text on the axis and title hard to read clearly, particularly for individuals with visual impairments. While not catastrophic in the sense of being completely illegible, the combination of bright, high-contrast colors and black text creates a visually overwhelming effect that reduces readability. The issue is exacerbated by the fact that the bars are very tall and the y-axis scale is large, making the text appear small relative to the chart area. This combination of factors makes it difficult to extract data accurately and comfortably."
+        }
+      ]
+    },
+    {
+      "run_id": "strict-formatting-colors__ministral",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n1. The colors of the bars are incorrect. The first bar (A) is orange (#FF5733), which matches the request. However, the second bar (B) is green (#33FF57), which is correct, but the third bar (C) is blue (#3357FF), which is also correct. Wait, all colors match the requested hex codes.\n2. The bar heights are correct: 10, 20, and 15 for A, B, and C respectively.\n3. The title is \"RGB Bars\", which matches.\n4. The edge color is black with a line width of 2.5, which appears to be correct.\n5. The file is saved as figure.png.\n\nWait, all aspects seem to match. Let me recheck the colors:\n- Bar A: #FF5733 (correct)\n- Bar B: #33FF57 (correct)\n- Bar C: #3357FF (correct)\n\nAll colors are correct. The bars are in the correct order, the title is correct, and the edge color and width are"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The chart is difficult to read due to poor color contrast between the text (axis labels, title) and the background. The black text on a white background creates high contrast, but the bars themselves are very bright and the colors (especially the green and blue) are so vivid that they create visual glare, making it hard to focus on the data. However, the primary issue is that the text labels (A, B, C) and the title are not clearly legible due to the extreme brightness of the bars, which overwhelms the visual field. The bars are also very thick, which adds to the clutter. While not impossible to read, the combination of bright colors and thick bars creates a visually overwhelming chart that makes it difficult to extract data comfortably. The text is not overlapping or too small, but the overall visual noise is high. However, since the question asks to answer YES if ANY catastrophic readability issues are present, and the extreme brightness and clutter make it hard to focus on the data, it qualifies as catastrophic."
+        }
+      ]
+    },
+    {
+      "run_id": "strict-formatting-colors__qwen",
+      "errors": [
+        {
+          "family": "wrong_data",
+          "evidence": "The plotted data differs from what was requested in the following ways:\n1. The colors of the bars are incorrect. The first bar (A) is orange (#FF5733), which matches the requested color. However, the second bar (B) is green (#33FF57), which matches the requested color, but the third bar (C) is blue (#3357FF), which also matches the requested color. So the colors are actually correct.\n2. The title is \"RGB Bars\", which matches the requested title.\n3. The bars have black edges with a line width of 2.5, which matches the request.\n4. The values are [10, 20, 15] for categories ['A', 'B', 'C'], which matches the request.\n\nHowever, upon closer inspection, the colors are correct, the title is correct, the edge color and width are correct, and the data is correct. The only potential issue is that the output file is not visible, but the command executed appears to be correct.\n\nWait, the colors are correct, the title is correct, the edge color and width are correct, and the data is correct. The only issue"
+        },
+        {
+          "family": "hard_to_read",
+          "evidence": "The rendered figure is difficult to read due to poor color contrast between the text (axis labels, title) and the background. The black text on a white background creates high contrast, but the bars themselves use bright, saturated colors (red, green, blue) that may cause visual strain or make it hard to distinguish details in certain lighting conditions. However, the primary issue is that the text and labels are not overlapping, fonts are readable, and there is no extreme clutter. \n\nWait — re-evaluating the criteria: the question asks to answer YES only if the chart is *physically impossible* to extract data from due to catastrophic issues. In this case, the chart is clear: bars are distinct, labels are legible, colors are distinct, and there is no overlap or clutter. The colors are vibrant but not problematic for readability. The title, axis labels, and bar values are all clearly visible.\n\nTherefore, despite the bright colors, the chart is not catastrophically unreadable.\n\nNO"
+        }
+      ]
+    },
+    {
+      "run_id": "tiny-font-clutter__glm",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The text labels (numbers 1-20) are set to a font size of 4 points, which is far too small to read comfortably, especially on a pie chart with 20 slices. The labels are tightly packed around the edge of the chart, and due to their tiny size, they overlap significantly and are illegible. Even with the dark background, the combination of extremely small font size and dense labeling makes it physically impossible for a human to extract the data from the chart. The labels are not just difficult to read—they are effectively unreadable."
+        }
+      ]
+    },
+    {
+      "run_id": "tiny-font-clutter__ministral",
+      "errors": [
+        {
+          "family": "hard_to_read",
+          "evidence": "The text labels on the pie chart are set to a font size of 4 points, which is extremely small. Given the number of slices (20) and the limited space, the labels are overlapping and densely packed, making them illegible. Even with the dark background, the tiny font size and overlapping labels render the chart impossible to read, as a human would be unable to extract the data from the labels. This constitutes a catastrophic readability issue."
+        }
+      ]
+    },
+    {
+      "run_id": "tiny-font-clutter__qwen",
+      "errors": [
+        {
+          "family": "execution_failure",
+          "evidence": "Agent trajectory contains a Python crash traceback."
+        }
+      ]
+    }
+  ]
+}
